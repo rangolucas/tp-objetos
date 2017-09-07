@@ -1,3 +1,35 @@
+object joaquin {
+	var grupo = "Pimpinela"
+	var habilidad = 20
+
+	method interpretaBien(cancion) {
+		return cancion.duracionMayorA(300)
+	}
+
+	method cantaEnGrupo(presentacion) {
+		return presentacion.cantaEnGrupo(self)
+	}
+
+	method cobra(presentacion) {
+	if(self.cantaEnGrupo(presentacion)){
+		return 50
+	}
+	else{
+		return 100
+	}
+ }
+	
+
+	method habilidad(presentacion) {
+		if (self.cantaEnGrupo(presentacion)) {
+			return habilidad + 5
+		}
+		else return habilidad
+	}
+}
+
+
+
 
 object lucia {
 	var grupo = "Pimpinela"
