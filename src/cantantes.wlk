@@ -1,3 +1,5 @@
+import Presentacion.*
+
 object joaquin {
 	var grupo = "Pimpinela"
 	var habilidad = 20
@@ -87,10 +89,13 @@ object luisAlberto {
 	method suHabilidadEs() {
 		return 100.min(8 * valorGuitarra)
 	}
-	method cobra(presentacion) {
-		if (presentacion.hastaSeptiembre2017()) {
+	method tocaAntesDeSeptiembre(presentacion){
+	 return presentacion.fecha().month() <= 9
+	}
+	method cobra(presentacion){
+		if(self.tocaAntesDeSeptiembre(presentacion)){
 			return 1000
-		} else {
+		}else {
 			return 1200
 		}
 	}
