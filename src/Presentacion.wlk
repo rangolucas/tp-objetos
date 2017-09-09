@@ -1,4 +1,5 @@
 import cantantes.*
+import lugares.*
 
 class Presentacion {
 
