@@ -36,7 +36,7 @@ object lucia {
 	var habilidad = 70
 
 	method interpretaBien(cancion) {
-		return cancion.contains("familia")
+		return cancion.tienePalabra("familia")
 	}
 
 	method cantaEnGrupo(presentacion) {
