@@ -43,8 +43,8 @@ object lucia {
 		return presentacion.cantaEnGrupo(self)
 	}
 
-	method cobra(lugar) {
-		if (lugar.esConcurrido()) {
+	method cobra(presentacion) {
+		if (presentacion.esConcurrida()) {
 			return 500
 		}
 		else return 400
