@@ -1,4 +1,5 @@
-import Musicos.luisAlberto
+import cantantes.*
+
 describe "luisAlberto"{
 	test "Luis Alberto toca con la Fender. Queremos saber su habilidad, y la misma es 80."{
 		luisAlberto.tocarConFender()

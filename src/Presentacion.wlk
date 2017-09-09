@@ -2,7 +2,7 @@ import cantantes.*
 
 class Presentacion {
 
-	var fecha
+	var fecha //clase Date
 	var lugar
 	var artistas = #{}
 	
