@@ -16,6 +16,10 @@ class Presentacion {
 		return artistas.map{artista => artista.cobra()}.sum()
 	}
 	
+	method cantidadPersonas(){
+		return lugar.cantidadPersonas(fecha)
+	}
+	
 	method agregarArtistas(artista){
 		artistas.add(artista)
 	}
