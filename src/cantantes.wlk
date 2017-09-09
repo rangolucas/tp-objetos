@@ -3,7 +3,7 @@ object joaquin {
 	var habilidad = 20
 
 	method interpretaBien(cancion) {
-		return cancion.duracionMayorA(300)
+		return cancion.duraMasDe(300)
 	}
 
 	method cantaEnGrupo(presentacion) {
