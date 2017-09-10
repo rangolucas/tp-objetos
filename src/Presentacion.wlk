@@ -46,6 +46,6 @@ class Presentacion {
 	}
 	
 	method cantaEnGrupo(artista){
-		return artistas.contains(artista) && artistas.size() == 1
+		return artistas.contains(artista) && artistas.size() > 1
 	}
 }
