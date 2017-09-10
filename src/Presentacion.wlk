@@ -36,4 +36,12 @@ class Presentacion {
 	method fecha(){
 		return fecha
 	}
+	
+	method esConcurrida(){
+		return lugar.muchaCapacidad(fecha)
+	}
+	
+	method antesDeSeptiembre(){
+		return fecha.month() < 9
+	}
 }

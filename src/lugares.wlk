@@ -5,6 +5,10 @@ object lunaPark{
 		return cantidadPersonas
 	}
 	
+	method muchaCapacidad(fecha){ 
+		return self.cantidadPersonas(fecha) > 5000
+	}
+	
 }
 
 object trastienda{
@@ -16,5 +20,9 @@ object trastienda{
 			return cantidadPersonas +300
 		}
 		else return cantidadPersonas
+	}
+	
+	method muchaCapacidad(fecha) {
+		return self.cantidadPersonas(fecha) > 5000
 	}
 }

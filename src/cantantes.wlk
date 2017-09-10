@@ -13,13 +13,12 @@ object joaquin {
 	}
 
 	method cobra(presentacion) {
-	if(self.cantaEnGrupo(presentacion)){
-		return 50
-	}
-	else{
-		return 100
-	}
- }
+		if(self.cantaEnGrupo(presentacion)){
+			return 50
+		} else {
+			return 100
+		}
+ 	}
 	
 
 	method habilidad(presentacion) {
@@ -76,12 +75,15 @@ object luisAlberto {
 			valorGuitarra = 5
 		}
 	}
+	
 	method tocarConGibson(){
 		valorGuitarra = 15
 	}
+	
 	method interpretaBien(cancion) {
 		return true
 	}
+	
 	method valorGuitarra() {
 		return valorGuitarra
 	}
@@ -89,13 +91,11 @@ object luisAlberto {
 	method suHabilidadEs() {
 		return 100.min(8 * valorGuitarra)
 	}
-	method tocaAntesDeSeptiembre(presentacion){
-	 return presentacion.fecha().month() <= 9
-	}
+	
 	method cobra(presentacion){
-		if(self.tocaAntesDeSeptiembre(presentacion)){
+		if(presentacion.antesDeSeptiembre()){
 			return 1000
-		}else {
+		} else {
 			return 1200
 		}
 	}
