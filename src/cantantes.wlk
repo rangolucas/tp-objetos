@@ -1,3 +1,5 @@
+import Presentacion.*
+
 object joaquin {
 	var grupo = "Pimpinela"
 	var habilidad = 20
@@ -11,13 +13,12 @@ object joaquin {
 	}
 
 	method cobra(presentacion) {
-	if(self.cantaEnGrupo(presentacion)){
-		return 50
-	}
-	else{
-		return 100
-	}
- }
+		if(self.cantaEnGrupo(presentacion)){
+			return 50
+		} else {
+			return 100
+		}
+ 	}
 	
 
 	method habilidad(presentacion) {
@@ -36,7 +37,7 @@ object lucia {
 	var habilidad = 70
 
 	method interpretaBien(cancion) {
-		return cancion.contains("familia")
+		return cancion.tienePalabra("familia")
 	}
 
 	method cantaEnGrupo(presentacion) {
@@ -74,12 +75,15 @@ object luisAlberto {
 			valorGuitarra = 5
 		}
 	}
+	
 	method tocarConGibson(){
 		valorGuitarra = 15
 	}
+	
 	method interpretaBien(cancion) {
 		return true
 	}
+	
 	method valorGuitarra() {
 		return valorGuitarra
 	}
@@ -87,8 +91,9 @@ object luisAlberto {
 	method suHabilidadEs() {
 		return 100.min(8 * valorGuitarra)
 	}
-	method cobra(presentacion) {
-		if (presentacion.hastaSeptiembre2017()) {
+	
+	method cobra(presentacion){
+		if(presentacion.antesDeSeptiembre()){
 			return 1000
 		} else {
 			return 1200
