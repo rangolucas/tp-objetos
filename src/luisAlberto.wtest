@@ -1,14 +1,14 @@
-import cantantes.luisAlberto
+import cantantes.*
 import Presentacion.*
 import lugares.*
 
 describe "luisAlberto"{
 	
 	method tocarEnElLunaPark(){
-	return	new Presentacion(new Date(20, 04, 2017), lunaPark, #{luisAlberto})
+	return	new Presentacion(new Date(20, 04, 2017), lunaPark, #{luisAlberto, lucia, joaquin})
 	}
 	method tocarEnLaTrastienda(){
-		return new Presentacion(new Date(15, 11, 2017), trastienda, #{luisAlberto})
+		return new Presentacion(new Date(15, 11, 2017), trastienda, #{luisAlberto, lucia, joaquin})
 	}
 	
 	test "Luis Alberto toca con la Fender. Queremos saber su habilidad, y la misma es 80."{
