@@ -1,5 +1,5 @@
 object lunaPark{
-	var cantidadPersonas = 9.290
+	var cantidadPersonas = 9290
 	
 	method cantidadPersonas(fecha){
 		return cantidadPersonas
