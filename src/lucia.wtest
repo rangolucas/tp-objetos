@@ -1,0 +1,27 @@
+import cantantes.*
+import Presentacion.*
+import lugares.*
+import Cancion.*
+
+describe "lucia"{
+	
+	method tocanLosPimpinela(){
+	 return new Presentacion(new Date(20, 04, 2017), lunaPark, #{joaquin, lucia})
+	}
+	method tocaSola(){
+		  return new Presentacion(new Date(20, 04, 2017), lunaPark, #{lucia})
+	}
+	method cantaLaFamilia(){
+		return new Cancion(312 , “Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó
+			 y nadie está aquí y puedo ver que solo estallan las hojas al brillar”)
+	}
+	test "Lucia canta en Pimpinela, su habilidad es de 50."{
+		assert.equals(50, lucia.habilidad(self.tocanLosPimpinela()))
+	}
+	test "Lucia canta en el grupo pimpinela, y lanza su carrera como solista dejando dicho grupo. Su habilidad es de 70."{
+		assert.equals(70, lucia.habilidad(self.tocaSola()))
+	}
+	test "Lucia interpreta bien la cancion 'La Familia'"{
+		assert.that(lucia.interpretaBien(self.cantaLaFamilia()))
+	}
+}
