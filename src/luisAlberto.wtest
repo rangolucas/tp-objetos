@@ -1,16 +1,9 @@
-import cantantes.luisAlberto
+import cantantes.*
 import Presentacion.*
 import lugares.*
 
 describe "luisAlberto"{
-	
-	method tocarEnElLunaPark(){
-	return	new Presentacion(new Date(20, 04, 2017), lunaPark, #{luisAlberto})
-	}
-	method tocarEnLaTrastienda(){
-		return new Presentacion(new Date(15, 11, 2017), trastienda, #{luisAlberto})
-	}
-	
+		
 	test "Luis Alberto toca con la Fender. Queremos saber su habilidad, y la misma es 80."{
 		luisAlberto.tocarConFender()
 		assert.equals(80, luisAlberto.suHabilidadEs())
@@ -34,9 +27,9 @@ describe "luisAlberto"{
 		assert.that(luisAlberto.interpretaBien("Cisne"))
 	}
 	test "Luis Alberto hace una presentación en el Luna Park, cobra 1000 porque es antes de septiembre."{
-		assert.equals(1000, luisAlberto.cobra(self.tocarEnElLunaPark()))
+		assert.equals(1000, luisAlberto.cobra(new Presentacion(new Date(20, 04, 2017), lunaPark, #{luisAlberto, lucia, joaquin})))
 	}
 	test "Luis Alberto hace una presentacion en La Trastienda, cobra 1200 porque es después de septiembre."{
-		assert.equals(1200, luisAlberto.cobra(self.tocarEnLaTrastienda()))
+		assert.equals(1200, luisAlberto.cobra(new Presentacion(new Date(15, 11, 2017), trastienda, #{luisAlberto, lucia, joaquin})))
 	}
 }
