@@ -44,4 +44,8 @@ class Presentacion {
 	method antesDeSeptiembre(){
 		return fecha.month() < 9
 	}
+	
+	method cantaEnGrupo(artista){
+		return artistas.contains(artista) && artistas.size() == 1
+	}
 }
