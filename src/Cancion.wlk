@@ -13,7 +13,7 @@ class Cancion {
 	}
 	
 	method tienePalabra(unaPalabra){
-		return letra.contains(unaPalabra)
+		return letra.toLowerCase().contains(unaPalabra.toLowerCase())
 	}
 	
 
