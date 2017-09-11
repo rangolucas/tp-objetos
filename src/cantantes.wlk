@@ -88,7 +88,7 @@ object luisAlberto {
 		return valorGuitarra
 	}
 
-	method suHabilidadEs() {
+	method habilidad(presentacion) {
 		return 100.min(8 * valorGuitarra)
 	}
 	
