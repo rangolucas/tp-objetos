@@ -30,8 +30,6 @@ object joaquin {
 }
 
 
-
-
 object lucia {
 	var grupo = "Pimpinela"
 	var habilidad = 70
@@ -61,35 +59,14 @@ object lucia {
 
 
 object luisAlberto {
-	//var habilidad//
-	var valorGuitarra
-
-	method tocarConFender() {
-		valorGuitarra = 10
-	}
-
-	method tocarConGibson(estado) {
-		if (estado == "sana") {
-			valorGuitarra = 15
-		} else {
-			valorGuitarra = 5
-		}
-	}
-	
-	method tocarConGibson(){
-		valorGuitarra = 15
-	}
+	var guitarra
 	
 	method interpretaBien(cancion) {
 		return true
 	}
-	
-	method valorGuitarra() {
-		return valorGuitarra
-	}
 
 	method habilidad(presentacion) {
-		return 100.min(8 * valorGuitarra)
+		return 100.min(8 * guitarra.valor() )
 	}
 	
 	method cobra(presentacion){
@@ -100,3 +77,29 @@ object luisAlberto {
 		}
 	}
 }
+
+//Guitarras
+object fender{
+	var valor = 10
+	
+	method valor(){
+		return valor
+	}
+}
+
+object gibsonSana{
+	var valor = 15
+	
+	method valor(){
+		return valor		
+	}
+}
+
+object gibsonRota{
+	var valor = 5
+	
+	method valor(){
+		return valor		
+	}
+}
+
