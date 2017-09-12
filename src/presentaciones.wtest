@@ -1,0 +1,39 @@
+import cantantes.*
+import lugares.*
+import Presentacion.*
+
+describe "tests presentaciones"{
+	var fechaTrastienda = new Date(15, 11, 2017)
+	var fechaLunaPark = new Date(20, 04, 2017)
+	var presentacionTrastienda = new Presentacion(fechaTrastienda,
+		trastienda, #{joaquin, lucia, luisAlberto})
+	var presentacionLunaPark = new Presentacion(fechaLunaPark,
+		lunaPark, #{joaquin, lucia, luisAlberto}
+	)
+	
+	test "joaquin toca solo en la presentacion de la trastienda y cobra 100" {
+		presentacionTrastienda.artistas(#{joaquin})
+		assert.equals(100, joaquin.cobra(presentacionTrastienda))
+	}
+	
+	test "la capacidad de la trastienda el 5/8/2017 es 700 (sabado)"{
+		presentacionTrastienda.fecha(05, 08, 2017)
+		assert.equals(700, presentacionTrastienda.cantidadPersonas())
+	}
+	
+	test "la capacidad de la trastienda el 8/8/2017 es 400 (martes)"{
+		presentacionTrastienda.fecha(08, 08, 2017)
+		assert.equals(400, presentacionTrastienda.cantidadPersonas())
+	}
+	
+	test "el costo de la presentacion del Luna Park (20/4/2017) es 1550"{
+		assert.equals(1550, presentacionLunaPark.costo())
+	}
+	
+	test "el costo de la presentacion de la trastienda (15/11/2017) es 1650"{
+		assert.equals(1650, presentacionTrastienda.costo())
+	}
+	
+	
+	
+}

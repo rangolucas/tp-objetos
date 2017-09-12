@@ -14,11 +14,23 @@ class Presentacion {
 	}
 	
 	method costo() {
-		return artistas.map{artista => artista.cobra()}.sum()
+		return artistas.map{artista => artista.cobra(self)}.sum()
 	}
 	
 	method cantidadPersonas(){
 		return lugar.cantidadPersonas(fecha)
+	}
+	
+	method esConcurrida(){
+		return lugar.esConcurrido(fecha)
+	}
+	
+	method antesDe(dia, mes, anio){
+		return fecha < new Date(dia, mes, anio)
+	}
+	
+	method cantaEnGrupo(artista){
+		return artistas.contains(artista) && artistas.size() > 1
 	}
 	
 	method agregarArtistas(artista){
@@ -27,6 +39,10 @@ class Presentacion {
 	
 	method quitarArtista(artista){
 		artistas.remove(artista)
+	}
+	
+	method artistas(listaDeArtistas){
+		artistas = listaDeArtistas
 	}
 
 	method lugar(){
@@ -37,15 +53,7 @@ class Presentacion {
 		return fecha
 	}
 	
-	method esConcurrida(){
-		return lugar.muchaCapacidad(fecha)
-	}
-	
-	method antesDe(dia, mes, anio){
-		return fecha < new Date(dia, mes, anio)
-	}
-	
-	method cantaEnGrupo(artista){
-		return artistas.contains(artista) && artistas.size() > 1
+	method fecha(d, m, a){
+		fecha = new Date(d, m, a)
 	}
 }

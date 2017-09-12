@@ -5,7 +5,7 @@ object lunaPark{
 		return cantidadPersonas
 	}
 	
-	method muchaCapacidad(fecha){ 
+	method esConcurrido(fecha){ 
 		return self.cantidadPersonas(fecha) > 5000
 	}
 	
@@ -22,7 +22,7 @@ object trastienda{
 		else return cantidadPersonas
 	}
 	
-	method muchaCapacidad(fecha) {
+	method esConcurrido(fecha) {
 		return self.cantidadPersonas(fecha) > 5000
 	}
 }
