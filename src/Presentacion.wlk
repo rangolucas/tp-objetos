@@ -41,8 +41,8 @@ class Presentacion {
 		return lugar.muchaCapacidad(fecha)
 	}
 	
-	method antesDeSeptiembre2017(){
-		return fecha < new Date(1,9,2017)
+	method antesDe(dia, mes, anio){
+		return fecha < new Date(dia, mes, anio)
 	}
 	
 	method cantaEnGrupo(artista){
