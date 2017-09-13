@@ -1,33 +1,40 @@
 import cantantes.*
 
 object fender{
-	 	var valor = 10
-	 	var estado = "sana" 
+	var valor = 10
 	 	
-	 	method romperse(){
-		estado = "rota"
-	}
 	method valor(){
 		return valor
-	}
-	method arreglarse(){
-		estado = "sana"
 	}
 
 }
 
 object gibson{
-	var valor = 15
-	var estado = "sana"
+	var estado = gibsonSana
 	
 	method romperse(){
-		estado = "rota"
-		valor = 5
+		estado = gibsonRota
 	}
+	
 	method arreglarse(){
-		estado = "sana"
-		valor = 15
+		estado = gibsonSana
 	}
+	
+	method valor(){
+		return estado.valor()
+	}
+}
+
+object gibsonSana{
+	var valor = 15
+	
+	method valor(){
+		return valor
+	}
+}
+
+object gibsonRota{
+	var valor = 5
 	
 	method valor(){
 		return valor

@@ -82,35 +82,12 @@ object luisAlberto {
 			return 1200
 		}
 	}
+	
 	method tratarMal(guitar){
 		guitar.romperse()
 	}
+	
 	method guitarra(){
 		return guitarra
 	}
 }
-//Guitarras
-object fender{
-	var valor = 10
-	
-	method valor(){
-		return valor
-	}
-}
-
-object gibsonSana{
-	var valor = 15
-	
-	method valor(){
-		return valor		
-	}
-}
-
-object gibsonRota{
-	var valor = 5
-	
-	method valor(){
-		return valor		
-	}
-}
-
