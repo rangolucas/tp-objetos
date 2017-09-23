@@ -1,19 +1,15 @@
 import Presentacion.*
 import guitarras.*
 import lugares.*
+import MusicoDeGrupo.*
+import MusicoVocalista.*
 
-object joaquin {
-	var grupo = "Pimpinela"
-	var habilidad = 20
+object joaquin inherits MusicoDeGrupo(20, "Pimpinela"){
 
 	method interpretaBien(cancion) {
 		return cancion.duraMasDe(300)
 	}
-
-	method cantaEnGrupo(presentacion) {
-		return presentacion.cantaEnGrupo(self)
-	}
-
+	
 	method cobra(presentacion) {
 		if(self.cantaEnGrupo(presentacion)){
 			return 50
@@ -32,17 +28,7 @@ object joaquin {
 }
 
 
-object lucia {
-	var grupo = "Pimpinela"
-	var habilidad = 70
-
-	method interpretaBien(cancion) {
-		return cancion.tienePalabra("familia")
-	}
-
-	method cantaEnGrupo(presentacion) {
-		return presentacion.cantaEnGrupo(self)
-	}
+object lucia inherits MusicoVocalista(70, "Pimpinela") {
 
 	method cobra(presentacion) {
 		if (presentacion.esConcurrida()) {
@@ -90,4 +76,15 @@ object luisAlberto {
 	method guitarra(){
 		return guitarra
 	}
+}
+
+object kike inherits MusicoDeGrupo(60, "") {
+	 
+	 method cobra(presentacion){
+	 	
+	 } 
+}
+
+object soledad inherits MusicoVocalista(55, "", "amor"){
+	
 }
