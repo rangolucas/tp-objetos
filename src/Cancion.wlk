@@ -1,11 +1,13 @@
 class Cancion {
 
-	var duracion
+	var titulo
+	var duracion //en segundos
 	var letra
 	
-	constructor(unaDuracion, unaLetra){
-		duracion = unaDuracion
+	constructor(unTitulo, unaLetra, unaDuracion){
+		titulo = unTitulo
 		letra = unaLetra
+		duracion = unaDuracion
 	}
 
 	method duraMasDe(unaDuracion){
@@ -13,8 +15,19 @@ class Cancion {
 	}
 	
 	method tienePalabra(unaPalabra){
-		return letra.contains(unaPalabra)
+		return letra.toLowerCase().contains(unaPalabra.toLowerCase())
 	}
 	
+	method esCorta(){
+		return duracion< 3*60
+	}
+	
+	method duracion(){
+		return duracion
+	}
+	
+	method cantidadDeLetras(){
+		return letra.size()
+	}
 
 }

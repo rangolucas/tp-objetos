@@ -8,11 +8,11 @@ test "joaquin canta el grupo pimpinela, su habilidad pasa a ser 25" {
 }
 
 test "joaquin deja el grupo pimpinela, su habilidad pasa a ser 20" {
-	assert.equals(25,joaquin.habilidad( new Presentacion(new Date(20, 04, 2017), lunaPark, #{joaquin}) ))
+	assert.equals(20,joaquin.habilidad( new Presentacion(new Date(20, 04, 2017), lunaPark, #{joaquin}) ))
 }
 
 test "joaquin interpreta bien 'cisne'"{
-	assert.notThat(joaquin.interpretaBien( new Cancion(312 ,"Hoy el viento se abrio quedo vacio el aire una vez mas y el manantial broto y nadie esta aqui y puedo ver que solo estallan las hojas al brillar")))
+	assert.that(joaquin.interpretaBien( new Cancion(312 ,"Hoy el viento se abrio quedo vacio el aire una vez mas y el manantial broto y nadie esta aqui y puedo ver que solo estallan las hojas al brillar")))
 }
 
 test "joaquin interpreta bien 'La Familia'"{
@@ -20,11 +20,11 @@ test "joaquin interpreta bien 'La Familia'"{
 }
 
 test "joaquin cobra 50 en lunaPark" {
-	assert.equals(50, new Presentacion(new Date(20, 04, 2017), lunaPark, #{joaquin, lucia}) )
+	assert.equals(50, joaquin.cobra(new Presentacion(new Date(20, 04, 2017), lunaPark, #{joaquin, lucia})))
 }
 
 test "joaquin cobra 100 en trastienda (por trabajar solo)" {
-	assert.equals(100, new Presentacion(new Date(15, 11, 2017), trastienda, #{joaquin}) )
+	assert.equals(100, joaquin.cobra(new Presentacion(new Date(15, 11, 2017), trastienda, #{joaquin})))
 }
 
 
