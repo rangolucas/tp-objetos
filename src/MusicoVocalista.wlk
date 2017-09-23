@@ -14,7 +14,7 @@ class MusicoVocalista {
 	method cantaEnGrupo(presentacion) {
 		return presentacion.cantaEnGrupo(self)
 	}
-	method interpretaBien(cancion, unaPalabra) {
-		return cancion.tienePalabra(unaPalabra) && unaPalabra == palabra
+	method interpretaBien(cancion) {
+		return cancion.tienePalabra(palabra)
 	}
 }

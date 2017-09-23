@@ -28,7 +28,7 @@ object joaquin inherits MusicoDeGrupo(20, "Pimpinela"){
 }
 
 
-object lucia inherits MusicoVocalista(70, "Pimpinela") {
+object lucia inherits MusicoVocalista(70, "Pimpinela","familia") {
 
 	method cobra(presentacion) {
 		if (presentacion.esConcurrida()) {
