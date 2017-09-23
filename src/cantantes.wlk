@@ -4,7 +4,7 @@ import lugares.*
 import MusicoDeGrupo.*
 import MusicoVocalista.*
 
-object joaquin inherits MusicoDeGrupo(20, "Pimpinela"){
+object joaquin inherits MusicoDeGrupo( "Pimpinela", 20, 5){
 
 	method interpretaBien(cancion) {
 		return cancion.duraMasDe(300)
@@ -18,17 +18,10 @@ object joaquin inherits MusicoDeGrupo(20, "Pimpinela"){
 		}
  	}
 	
-
-	method habilidad(presentacion) {
-		if (self.cantaEnGrupo(presentacion)) {
-			return habilidad + 5
-		}
-		else return habilidad
-	}
 }
 
 
-object lucia inherits MusicoVocalista(70, "Pimpinela","familia") {
+object lucia inherits MusicoVocalista("Pimpinela",70,"familia") {
 
 	method cobra(presentacion) {
 		if (presentacion.esConcurrida()) {
@@ -78,13 +71,13 @@ object luisAlberto {
 	}
 }
 
-object kike inherits MusicoDeGrupo(60, "") {
+object kike inherits MusicoDeGrupo("", 60 , 20) {
 	 
 	 method cobra(presentacion){
 	 	
 	 } 
 }
 
-object soledad inherits MusicoVocalista(55, "", "amor"){
+object soledad inherits MusicoVocalista("", 55, "amor"){
 	
 }
