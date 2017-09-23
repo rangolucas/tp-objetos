@@ -1,19 +1,15 @@
 import cantantes.*
 import Presentacion.*
+import musico.*
 
-class MusicoVocalista {
-	var habilidad
-	var grupo
+class MusicoVocalista inherits Musico {
+
 	var palabra
 
-	constructor(unaHabilidad, unGrupo, unaPalabra) {
-		habilidad = unaHabilidad
-		grupo = unGrupo 
+	constructor(unaHabilidad, unGrupo, unaPalabra) = super(unaHabilidad, unGrupo) {
 		palabra = unaPalabra
 	}
-	method cantaEnGrupo(presentacion) {
-		return presentacion.cantaEnGrupo(self)
-	}
+
 	method interpretaBien(cancion) {
 		return cancion.tienePalabra(palabra)
 	}

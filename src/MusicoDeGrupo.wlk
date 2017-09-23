@@ -1,20 +1,12 @@
 import cantantes.*
 import Presentacion.*
+import musico.*
 
-class MusicoDeGrupo {
-	
-	var habilidad
-	var grupo
+class MusicoDeGrupo inherits Musico {
 
-	constructor(unaHabilidad, unGrupo) {
-		habilidad = unaHabilidad
-		grupo = unGrupo
-	}
+	constructor(unGrupo, unaHabilidad) = super(unGrupo, unaHabilidad)
 
-	method cantaEnGrupo(presentacion) {
-		return presentacion.cantaEnGrupo(self)
-	}
-	method habilidad(presentacion, unaCantidad) {
+	method habilidad(presentacion, unaCantidad) { //ESTO PERDIO EL POLIMORFISMO
 		if (self.cantaEnGrupo(presentacion)) {
 			return habilidad += unaCantidad
 		} else {
