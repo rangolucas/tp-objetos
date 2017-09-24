@@ -1,8 +1,7 @@
 import Presentacion.*
 import guitarras.*
 import lugares.*
-import MusicoDeGrupo.*
-import MusicoVocalista.*
+import musico.*
 
 object joaquin inherits MusicoDeGrupo( "Pimpinela", 20, 5){
 
@@ -39,10 +38,10 @@ object lucia inherits MusicoVocalista("Pimpinela",70,"familia") {
 }
 
 
-object luisAlberto {
+object luisAlberto inherits Musico( null , null){
 
 	var guitarra
-	var habilidad
+
 	
 	method tocarCon(guitar){
 		guitarra = guitar
@@ -51,7 +50,7 @@ object luisAlberto {
 		return true
 	}
 	method habilidad(presentacion) {
-		return 100.min(8 * guitarra.valor())
+		habilidad = 100.min(8 * guitarra.valor())
 		
 		}
 	method cobra(presentacion){
@@ -71,7 +70,7 @@ object luisAlberto {
 	}
 }
 
-object kike inherits MusicoDeGrupo("", 60 , 20) {
+object kike inherits MusicoDeGrupo( null , 60 , 20) {
 	 
 	 method cobra(presentacion){
 	 	
