@@ -77,6 +77,6 @@ object kike inherits MusicoDeGrupo( null , 60 , 20) {
 	 } 
 }
 
-object soledad inherits MusicoVocalista("", 55, "amor"){
+object soledad inherits MusicoVocalista(null, 55, "amor"){
 	
 }
