@@ -16,8 +16,9 @@ object luisAlberto inherits Musico( null , null, null){
 	}
 	method habilidad(presentacion) {
 		habilidad = 100.min(8 * guitarra.valor())
-		
 		}
+		
+		
 	method cobra(presentacion){
 		if(presentacion.antesDe(1, 9, 2017)){
 			return 1000

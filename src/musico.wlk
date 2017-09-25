@@ -85,11 +85,12 @@ class MusicoDeGrupo inherits Musico {
 			return habilidad
 		}
 	}
-	method cobra(presentacion) {
-		if(self.cantaEnGrupo(presentacion)){
-			return 50
-		} else {
-			return 100
-		}
- 	}
+	method cobra(presentacion) { 
+    	if(self.cantaEnGrupo(presentacion)){ 
+      		return 50 
+    } else { 
+      		return 100 
+    } 
+   } 
+	
 }

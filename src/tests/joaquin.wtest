@@ -6,7 +6,7 @@ import musico.*
 describe "joaquin" {
 	
 	var joaquin = new MusicoDeGrupo('Pimpinela', 20, #{}, 5)
-	var lucia = new MusicoVocalista('Pimpinela', 70, #{}, null )
+	var lucia = new MusicoVocalista('Pimpinela', 70, #{}, 'familia' )
 
 test "joaquin canta el grupo pimpinela, su habilidad pasa a ser 25" {
 	assert.equals(25,joaquin.habilidad( new Presentacion(new Date(20, 04, 2017), lunaPark, #{joaquin, lucia}) ))
