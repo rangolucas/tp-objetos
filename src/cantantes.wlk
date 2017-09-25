@@ -7,7 +7,6 @@ object luisAlberto inherits Musico( null , null, null){
 
 	var guitarra
 
-	
 	method tocarCon(guitar){
 		guitarra = guitar
 	}
@@ -15,9 +14,13 @@ object luisAlberto inherits Musico( null , null, null){
 		return true
 	}
 	method habilidad(presentacion) {
-		habilidad = 100.min(8 * guitarra.valor())
+		self.efectoGuitarra()
+		return habilidad
 		}
 		
+	method efectoGuitarra(){
+		habilidad = 100.min(8 * guitarra.valor())
+		}
 		
 	method cobra(presentacion){
 		if(presentacion.antesDe(1, 9, 2017)){

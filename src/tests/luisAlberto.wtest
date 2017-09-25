@@ -29,9 +29,9 @@ describe "luisAlberto"{
 		assert.that(luisAlberto.interpretaBien("Cisne"))
 	}
 	test "Luis Alberto hace una presentación en el Luna Park, cobra 1000 porque es antes de septiembre."{
-		assert.equals(1000, luisAlberto.cobra(new Presentacion(new Date(20, 04, 2017), lunaPark, #{luisAlberto, lucia, joaquin})))
+		assert.equals(1000, luisAlberto.cobra(new Presentacion(new Date(20, 04, 2017), lunaPark, #{luisAlberto})))
 	}
 	test "Luis Alberto hace una presentacion en La Trastienda, cobra 1200 porque es después de septiembre."{
-		assert.equals(1200, luisAlberto.cobra(new Presentacion(new Date(15, 11, 2017), trastienda, #{luisAlberto, lucia, joaquin})))
+		assert.equals(1200, luisAlberto.cobra(new Presentacion(new Date(15, 11, 2017), trastienda, #{luisAlberto})))
 	}
 }

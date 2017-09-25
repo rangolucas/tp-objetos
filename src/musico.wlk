@@ -14,7 +14,6 @@ class Musico {
 		habilidad = unaHabilidad
 		albumes= unosAlbumes
 		
-		albumes.forEach({ album => canciones.addAll( album.canciones() ) })
 	}
 	
 	method agregarAlbum(album){
