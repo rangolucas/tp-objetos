@@ -5,11 +5,11 @@ describe"test segunda entrega"{
     
     //Canciones:
     var laFamilia = new Cancion("La Familia",264 , "Quiero brindar por mi gente sencilla, por el amor brindo por la familia.")
-    var eres = new Cancion("Eres", 145, "Eres lo mejor que me pasó en la vida, no tengo duda, no habrá más nada después de ti. Eres lo que le dio brillo al día a día, y así será por siempre, no cambiará, hasta el final de mis días.")    
-    var cisne = new Cancion("Cisne",321,"Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar")
-    var almadediamante =new Cancion("Alma de Diamante",216,"Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar")    
-    var crisantemo =new Cancion("Criestantemo",175,"Tócame junto a esta pared, yo quede por aquí... cuando no hubo más luz... quiero mirar a través de mi piel... Crisantemo, que se abrió... encuentra el camino hacia el cielo")      
-    var corezanoAmericano = new Cancion ("Corazon Americano",154,"Canta corazón, canta más alto, que tu pena al fin se va marchando, el nuevo milenio ha de encontrarnos, junto corazón, como soñamos")    
+    var eres = new Cancion("Eres", 145, "Eres lo mejor que me pasï¿½ en la vida, no tengo duda, no habrï¿½ mï¿½s nada despuï¿½s de ti. Eres lo que le dio brillo al dï¿½a a dï¿½a, y asï¿½ serï¿½ por siempre, no cambiarï¿½, hasta el final de mis dï¿½as.")    
+    var cisne = new Cancion("Cisne",321,"Hoy el viento se abriï¿½ quedï¿½ vacï¿½o el aire una vez mï¿½s y el manantial brotï¿½ y nadie estï¿½ aquï¿½ y puedo ver que solo estallan las hojas al brillar")
+    var almadediamante =new Cancion("Alma de Diamante",216,"Hoy el viento se abriï¿½ quedï¿½ vacï¿½o el aire una vez mï¿½s y el manantial brotï¿½ y nadie estï¿½ aquï¿½ y puedo ver que solo estallan las hojas al brillar")    
+    var crisantemo =new Cancion("Criestantemo",175,"Tï¿½came junto a esta pared, yo quede por aquï¿½... cuando no hubo mï¿½s luz... quiero mirar a travï¿½s de mi piel... Crisantemo, que se abriï¿½... encuentra el camino hacia el cielo")      
+    var corezanoAmericano = new Cancion ("Corazon Americano",154,"Canta corazï¿½n, canta mï¿½s alto, que tu pena al fin se va marchando, el nuevo milenio ha de encontrarnos, junto corazï¿½n, como soï¿½amos")    
     
     //Albumes:    
     var laSole = new Album("La Sole",new Date(04, 02, 2005), 200000, 130000,#{eres, corazonAmericano})
@@ -26,11 +26,11 @@ describe"test segunda entrega"{
     }
 
 
-test "La canción “Crisantemo” es corta"{
+test "La canciï¿½n ï¿½Crisantemoï¿½ es corta"{
     assert.that(crisantemo.esCorta())
 }
 
-test "La canción 'Alma de diamante' es corta"{
+test "La canciï¿½n 'Alma de diamante' es corta"{
     assert.notThat(almaDeDiamante.esCorta())
 }
 
@@ -56,4 +56,35 @@ test "Ningun cancion de Luis Alberto tiene la palabra 'pujante' "{
 
 test "La obra de Kike dura 0 segundos"{
     assert.equals(0, kike.duracionObra())
+}
+
+test "La obra de soledad dura 299 segundos."{
+    assert.equals(299, soledad.duracionObra())
+}
+
+test "La obra de Luis Alberto dura 703 segundos."{
+    assert.equals(703, luisAlberto.duracionObra())
+}
+
+test "La cancion mas larga del album 'Para los arboles' es 'Alma de diamante', porque es la que mas palabras tiene."{
+    asset.equals("Alma de diamante", paraLosArboles.cancionMasLarga())
+}
+  
+test "La cancion mas larga del album 'La Sole' es 'Eres' "{
+    assert.equals( eres, laSole.cancionMasLarga() )
+}
+    
+test "la cancion mas larga del album 'Especial La Familia' es 'La Familia' "{
+    assert.equals( laFamilia, especialLaFamilia.cancionMasLarga() )
+    
+test "Luis Alberto la pego"{
+    assert.that(luisAlberto.laPego())
+}
+
+test "Soledad no la pego"{
+    assert.notThat( soledad.laPego() )
+}
+    
+test "Joaquin la pego"{
+    assert.that( joaquin.laPego() )    
 }
