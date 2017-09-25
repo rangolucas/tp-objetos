@@ -24,3 +24,36 @@ describe"test segunda entrega"{
         luisAlberto.agregarAlbum(paraLosArboles)
         } 
     }
+
+
+test "La canción “Crisantemo” es corta"{
+    assert.that(crisantemo.esCorta())
+}
+
+test "La canción 'Alma de diamante' es corta"{
+    assert.notThat(almaDeDiamante.esCorta())
+}
+
+test "Soledad es minimalista"{
+    assert.that( soledad.esMinimalista() )
+}
+
+test "Luis Alberto no es minimalista"{
+    assert.notThat( luisAlberto.esMinimalista() )
+}
+
+test "Joaquin no es minimalista"{
+    assert.notThat( joaquin.esMinimalista() )
+}
+
+test "Las canciones de Luis Alberto que tienen la palabra 'cielo' son crisantemo y alma de diamante"{
+    assert.equals( #{almaDeDiamante,crisantemo}, luisAlberto.cancionesConPalabra("cielo") )
+}
+
+test "Ningun cancion de Luis Alberto tiene la palabra 'pujante' "{
+    assert.equals(#{almaDeDiamante, crisantemo}, luisAlberto.cancionesConPalabra("pujante"))
+}
+
+test "La obra de Kike dura 0 segundos"{
+    assert.equals(0, kike.duracionObra())
+}
