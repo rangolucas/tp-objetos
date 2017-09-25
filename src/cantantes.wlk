@@ -3,7 +3,7 @@ import guitarras.*
 import lugares.*
 import musico.*
 
-object joaquin inherits MusicoDeGrupo( "Pimpinela", 20, 5){
+object joaquin inherits MusicoDeGrupo( "Pimpinela", 20,null,5){
 
 	method interpretaBien(cancion) {
 		return cancion.duraMasDe(300)
@@ -20,7 +20,7 @@ object joaquin inherits MusicoDeGrupo( "Pimpinela", 20, 5){
 }
 
 
-object lucia inherits MusicoVocalista("Pimpinela",70,"familia") {
+object lucia inherits MusicoVocalista("Pimpinela",70, null,"familia") {
 
 	method cobra(presentacion) {
 		if (presentacion.esConcurrida()) {
@@ -38,7 +38,7 @@ object lucia inherits MusicoVocalista("Pimpinela",70,"familia") {
 }
 
 
-object luisAlberto inherits Musico( null , null){
+object luisAlberto inherits Musico( null , null, null){
 
 	var guitarra
 
@@ -70,13 +70,13 @@ object luisAlberto inherits Musico( null , null){
 	}
 }
 
-object kike inherits MusicoDeGrupo( null , 60 , 20) {
+object kike inherits MusicoDeGrupo( null , 60 ,null, 20) {
 	 
 	 method cobra(presentacion){
 	 	
 	 } 
 }
 
-object soledad inherits MusicoVocalista(null, 55, "amor"){
+object soledad inherits MusicoVocalista(null, 55,null,"amor"){
 	
 }

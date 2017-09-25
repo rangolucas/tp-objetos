@@ -46,7 +46,7 @@ class MusicoVocalista inherits Musico {
 
 	var palabra
 
-	constructor(unGrupo, unaHabilidad, unaPalabra) = super(unGrupo, unaHabilidad) {
+	constructor(unGrupo, unaHabilidad, unosAlbumes , unaPalabra) = super(unGrupo, unaHabilidad, unosAlbumes) {
 		palabra = unaPalabra
 	}
 
@@ -58,7 +58,7 @@ class MusicoVocalista inherits Musico {
 class MusicoDeGrupo inherits Musico {
 	var plus	
 	
-	constructor(unGrupo, unaHabilidad,unPlus) = super(unGrupo, unaHabilidad){ 
+	constructor(unGrupo, unaHabilidad, unosAlbumes ,unPlus) = super(unGrupo, unaHabilidad, unosAlbumes){ 
 		plus = unPlus
 	}
 

@@ -1,0 +1,19 @@
+import cantantes.*
+import Albumes.*
+
+describe"test segunda entrega"{
+    
+var laFamilia = new Cancion("La Familia",312 ,("Quiero brindar por mi gente sencilla, por el amor brindo por la familia"))
+var especialLaFamilia = new Album("Especial La Familia",(new Date(17, 06, 1992)),100.000,89.000)
+    
+    
+    
+fixture{
+        joaquin.agregarAlbum(especialLaFamilia)
+        
+        
+        }
+    
+ 
+    
+}
