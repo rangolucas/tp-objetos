@@ -1,5 +1,6 @@
 import cantantes.*
 import Albumes.*
+import Cancion.*
 
 describe"test segunda entrega"{
     
