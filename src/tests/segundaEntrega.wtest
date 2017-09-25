@@ -31,7 +31,7 @@ test "La canci�n �Crisantemo� es corta"{
     assert.that(crisantemo.esCorta())
 }
 
-test "La canci�n 'Alma de diamante' es corta"{
+test "La canci�n 'Alma de diamante' no es corta"{
     assert.notThat(almaDeDiamante.esCorta())
 }
 
@@ -52,7 +52,7 @@ test "Las canciones de Luis Alberto que tienen la palabra 'cielo' son crisantemo
 }
 
 test "Ningun cancion de Luis Alberto tiene la palabra 'pujante' "{
-    assert.equals(#{almaDeDiamante, crisantemo}, luisAlberto.cancionesConPalabra("pujante"))
+    assert.equals(#{}, luisAlberto.cancionesConPalabra("pujante"))
 }
 
 test "La obra de Kike dura 0 segundos"{
