@@ -9,9 +9,10 @@ class Musico {
 	
 	var canciones=#{}
 	
-	constructor(unGrupo, unaHabilidad){
+	constructor(unGrupo, unaHabilidad, unosAlbumes){
 		grupo = unGrupo
 		habilidad = unaHabilidad
+		albumes= unosAlbumes
 		
 		albumes.forEach({ album => canciones.addAll( album.canciones() ) })
 	}
