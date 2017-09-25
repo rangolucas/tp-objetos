@@ -17,6 +17,10 @@ class Musico {
 		albumes.forEach({ album => canciones.addAll( album.canciones() ) })
 	}
 	
+	method agregarAlbum(album){
+	albumes.add(album)	
+	}
+	
 	method cantaEnGrupo(presentacion) {
 		return presentacion.cantaEnGrupo(self)
 	}
