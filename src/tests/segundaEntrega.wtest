@@ -3,17 +3,24 @@ import Albumes.*
 
 describe"test segunda entrega"{
     
-var laFamilia = new Cancion("La Familia",312 ,("Quiero brindar por mi gente sencilla, por el amor brindo por la familia"))
-var especialLaFamilia = new Album("Especial La Familia",(new Date(17, 06, 1992)),100.000,89.000)
+    //Canciones:
+    var laFamilia = new Cancion("La Familia",264 , "Quiero brindar por mi gente sencilla, por el amor brindo por la familia.")
+    var eres = new Cancion("Eres", 145, "Eres lo mejor que me pasó en la vida, no tengo duda, no habrá más nada después de ti. Eres lo que le dio brillo al día a día, y así será por siempre, no cambiará, hasta el final de mis días.")    
+    var cisne = new Cancion("Cisne",321,"Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar")
+    var almadediamante =new Cancion("Alma de Diamante",216,"Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar")    
+    var crisantemo =new Cancion("Criestantemo",175,"Tócame junto a esta pared, yo quede por aquí... cuando no hubo más luz... quiero mirar a través de mi piel... Crisantemo, que se abrió... encuentra el camino hacia el cielo")      
+    var corezanoAmericano = new Cancion ("Corazon Americano",154,"Canta corazón, canta más alto, que tu pena al fin se va marchando, el nuevo milenio ha de encontrarnos, junto corazón, como soñamos")    
     
-    
-    
-fixture{
-        joaquin.agregarAlbum(especialLaFamilia)
-        
-        
-        }
-    
+    //Albumes:    
+    var laSole = new Album("La Sole",new Date(04, 02, 2005), 200000, 130000,#{eres, corazonAmericano})
+    var especialLaFamilia = new Album("Especial La Familia",new Date(17, 06, 1992),100.000,89.000,#{laFamilia})
+    var paraLosArboles = new Album("Para los Arbole", new Date(31, 03, 2003), 50000, 49000, #{cisne, almaDeDiamante})
+    var justCrisantemo = new Album("Just Crisantemo", new Date(05, 12, 2007), 28000, 27500, #{crisantemo})
  
-    
-}
+    fixture{
+        joaquin.agregarAlbum(especialLaFamilia)
+        soledad.agregarAlbum(laSole)
+        luisAlberto.agregarAlbum(justCrisantemo)
+        luisAlberto.agregarAlbum(paraLosArboles)
+        } 
+    }
