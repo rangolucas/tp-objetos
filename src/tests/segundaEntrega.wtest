@@ -28,8 +28,8 @@ describe"Tests segunda entrega"{
    
  
    fixture{
-        luisAlberto.agregarAlbum(#{justCrisantemo})
-        luisAlberto.agregarAlbum(#{paraLosArboles})
+       luisAlberto.agregarAlbum(justCrisantemo)
+        luisAlberto.agregarAlbum(paraLosArboles)
         } 
 
 test "La cancion Crisantemo es corta"{
