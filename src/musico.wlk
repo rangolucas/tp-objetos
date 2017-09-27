@@ -7,8 +7,6 @@ class Musico {
 	var habilidad
 	var albumes = #{}
 	
-	var canciones=#{}
-	
 	constructor(unGrupo, unaHabilidad, unosAlbumes){
 		grupo = unGrupo
 		habilidad = unaHabilidad
@@ -25,11 +23,11 @@ class Musico {
 	}
 	
 	method esMinimalista(){
-		albumes.all({ album => album.sonCancionesCortas() })	
+		return albumes.all({ album => album.tieneCancionesCortas()})	
 	}
 	
 	method cancionesConPalabra(palabra){
-		canciones.filter({ cancion => cancion.tienePalabra(palabra) })
+		return albumes.canciones().filter({ cancion => cancion.tienePalabra(palabra) })
 	}
 	
 	method duracionObra(){

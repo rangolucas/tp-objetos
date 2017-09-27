@@ -19,7 +19,7 @@ class Cancion {
 	}
 	
 	method esCorta(){
-		return duracion< 3*60
+		return duracion < 3*60
 	}
 	
 	method duracion(){

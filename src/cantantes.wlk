@@ -2,8 +2,9 @@ import Presentacion.*
 import guitarras.*
 import lugares.*
 import musico.*
+import Albumes.*
 
-object luisAlberto inherits Musico( null , null, null){
+object luisAlberto inherits Musico( null , null, #{}){
 
 	var guitarra
 
