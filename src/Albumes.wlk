@@ -20,7 +20,7 @@ class Album {
 	}
 	
 	method cancionMasLarga(){
-		return cancion.max({ cancion => cancion.cantidadDeLetras() })
+		return canciones.max({ cancion => cancion.cantidadDeLetras() })
 	}
 
 	method esBuenaVenta(){
@@ -34,4 +34,7 @@ class Album {
 	method tieneCancionesCortas(){
 		return canciones.all({cancion => cancion.esCorta()})
 	}
+	method cancionesConLaPalabra(palabra){
+  		return canciones.filter{cancion => cancion.tienePalabra(palabra)}
+ }
 }

@@ -27,8 +27,8 @@ class Musico {
 	}
 	
 	method cancionesConPalabra(palabra){
-		return albumes.canciones().filter({ cancion => cancion.tienePalabra(palabra) })
-	}
+  		return albumes.flatMap({ album => album.cancionesConLaPalabra(palabra) })
+ }
 	
 	method duracionObra(){
 		return albumes.sum({album => album.duracion()})

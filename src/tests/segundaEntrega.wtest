@@ -29,7 +29,7 @@ describe"Tests segunda entrega"{
  
    fixture{
        luisAlberto.agregarAlbum(justCrisantemo)
-        luisAlberto.agregarAlbum(paraLosArboles)
+       luisAlberto.agregarAlbum(paraLosArboles)
         } 
 
 test "La cancion Crisantemo es corta"{
@@ -53,11 +53,11 @@ test "Joaquin no es minimalista"{
 }
 
 test "Las canciones de Luis Alberto que tienen la palabra 'cielo' son crisantemo y alma de diamante"{
-    assert.equals( #{almaDeDiamante,crisantemo}, luisAlberto.cancionesConPalabra('cielo') )
+    assert.equals( #{almaDeDiamante,crisantemo}, luisAlberto.cancionesConPalabra("cielo") )
 }
 
 test "Ningun cancion de Luis Alberto tiene la palabra 'pujante' "{
-    assert.equals(#{}, luisAlberto.cancionesConPalabra('pujante'))
+    assert.equals(#{}, luisAlberto.cancionesConPalabra("pujante"))
 }
 
 test "La obra de Kike dura 0 segundos"{
@@ -73,11 +73,11 @@ test "La obra de Luis Alberto dura 703 segundos."{
 }
 
 test "La cancion mas larga del album 'Para los arboles' es 'Alma de diamante', porque es la que mas palabras tiene."{
-    assert.equals("Alma de diamante", paraLosArboles.cancionMasLarga())
+    assert.equals(almaDeDiamante, paraLosArboles.cancionMasLarga())
 }
   
 test "La cancion mas larga del album 'La Sole' es 'Eres' "{
-    assert.equals( eres, laSole.cancionMasLarga() )
+    assert.equals(eres, laSole.cancionMasLarga() )
 }
     
 test "la cancion mas larga del album 'Especial La Familia' es 'La Familia' "{
