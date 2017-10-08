@@ -39,18 +39,35 @@ class Musico {
 		return albumes.all({ album => album.esBuenaVenta() })		
 	}
 	method listoParaElPdpalooza(){
-		return (self.granHabilidad() && self.compusoAlMenosUnaCancion() && self.interpretaBien(new Cancion("Cancion de Alicia en el paìs","Quién sabe Alicia, 
-		este país no estuvo hecho porque sí. Te vas a ir, vas a salir pero te quedas, ¿dónde más vas a ir? Y es que aquí, sabes el trabalenguas, 
-		trabalenguas, el asesino te asesina, y es mucho para ti. Se acabó ese juego que te hacía feliz.",510 )))
+		return (self.granHabilidad() && self.compusoAlMenosUnaCancion() && self.puedeEjecutarAliciaEnElPais())
 	}
 	method granHabilidad(){
-		return self.habilidad() > 70
+		if(self.habilidad() > 70){
+			return true
+		}else{
+			throw new Exception("La habilidad del musico no es mayor a 70.")
+		}
 	}
 	method habilidad(){
 		return habilidad
 	}
 	method compusoAlMenosUnaCancion(){
-		return albumes.any({album => album.tieneUnaCancion()})
+		if(albumes == #{}) {
+			return true
+		}else{
+			throw new Exception("No tiene canciones de su autoria.")
+		}
+	}
+		method puedeEjecutarAliciaEnElPais(){
+			if(self.interpretaBien(new Cancion("Cancion de Alicia en el pais", "Quién sabe Alicia, este
+			 país no estuvo hecho porque sí. Te vas a ir, vas a salir pero te quedas, ¿dónde más vas a ir?
+			 Y es que aquí, sabes el trabalenguas, trabalenguas, el asesino te asesina, y es mucho para ti. 
+			Se acabó ese juego que te hacía feliz.", 512))){
+				return true
+			}else{
+				throw new Exception("El musico no puede ejecutar bien la cancion Alicia en el pais")
+			}
+		}
 	}
 	
 	method interpretaBien(cancion) {
