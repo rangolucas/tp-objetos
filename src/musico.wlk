@@ -70,11 +70,15 @@ class MusicoVocalista inherits Musico {
 	constructor(unGrupo, unaHabilidad, unosAlbumes , unaPalabra) = super(unGrupo, unaHabilidad, unosAlbumes) {
 		palabra = unaPalabra
 	}
+	
+	override method interpretaBien(cancion) {
+    if(cancion.tienePalabra(palabra)){
+        return true
+    }else{
+        return super(cancion)
+    }
+}
 
-	/*method interpretaBien(cancion) {
-		return cancion.tienePalabra(palabra)
-	}
-	*/
 	method cobra(presentacion) {
 		if (presentacion.esConcurrida()) {
 			return 500
@@ -96,11 +100,14 @@ class MusicoDeGrupo inherits Musico {
 	constructor(unGrupo, unaHabilidad, unosAlbumes ,unPlus) = super(unGrupo, unaHabilidad, unosAlbumes){ 
 		plus = unPlus
 	}
-	
-	/*method interpretaBien(cancion) {
-		return cancion.duraMasDe(300)
-	}
-	*/
+
+		override method interpretaBien(cancion) {
+    if(cancion.duraMasDe(300)){
+        return true
+    }else{
+        return super(cancion)
+    }
+}
 
 	method habilidad(presentacion) { 
 		if (self.cantaEnGrupo(presentacion)) {
