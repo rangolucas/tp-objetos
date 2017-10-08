@@ -11,7 +11,7 @@ object luisAlberto inherits Musico( null , null, #{}){
 	method tocarCon(guitar){
 		guitarra = guitar
 	}
-	method interpretaBien(cancion) {
+	method interpretaBien(cancion) { //Guarda
 		return true
 	}
 	method habilidad(presentacion) {

@@ -39,6 +39,10 @@ class Album {
 		return canciones 
 	}
 	
+	method estaEnAlbum(cancion){
+		return canciones.contains(cancion)
+	}
+	
 	method tieneCancionesCortas(){
 		return canciones.all({cancion => cancion.esCorta()})
 	}

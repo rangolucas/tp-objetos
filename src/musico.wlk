@@ -52,6 +52,15 @@ class Musico {
 	method compusoAlMenosUnaCancion(){
 		return albumes.any({album => album.tieneUnaCancion()})
 	}
+	
+	method interpretaBien(cancion) {
+		if(habilidad>60){
+			return true
+		}else{
+			return albumes.any({album=>album.estaEnAlbum(cancion)})
+		}
+	}
+	
 }
 
 class MusicoVocalista inherits Musico {
@@ -62,10 +71,10 @@ class MusicoVocalista inherits Musico {
 		palabra = unaPalabra
 	}
 
-	method interpretaBien(cancion) {
+	/*method interpretaBien(cancion) {
 		return cancion.tienePalabra(palabra)
 	}
-	
+	*/
 	method cobra(presentacion) {
 		if (presentacion.esConcurrida()) {
 			return 500
@@ -87,9 +96,12 @@ class MusicoDeGrupo inherits Musico {
 	constructor(unGrupo, unaHabilidad, unosAlbumes ,unPlus) = super(unGrupo, unaHabilidad, unosAlbumes){ 
 		plus = unPlus
 	}
-	method interpretaBien(cancion) {
+	
+	/*method interpretaBien(cancion) {
 		return cancion.duraMasDe(300)
 	}
+	*/
+
 	method habilidad(presentacion) { 
 		if (self.cantaEnGrupo(presentacion)) {
 			return habilidad += plus
