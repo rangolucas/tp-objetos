@@ -1,5 +1,6 @@
 import Albumes.*
 import Presentacion.*
+import Cancion.*
 
 class Musico {
 
@@ -36,6 +37,20 @@ class Musico {
 	
 	method laPego(){
 		return albumes.all({ album => album.esBuenaVenta() })		
+	}
+	method listoParaElPdpalooza(){
+		return (self.granHabilidad() && self.compusoAlMenosUnaCancion() && self.interpretaBien(new Cancion("Cancion de Alicia en el paìs","Quién sabe Alicia, 
+		este país no estuvo hecho porque sí. Te vas a ir, vas a salir pero te quedas, ¿dónde más vas a ir? Y es que aquí, sabes el trabalenguas, 
+		trabalenguas, el asesino te asesina, y es mucho para ti. Se acabó ese juego que te hacía feliz.",510 )))
+	}
+	method granHabilidad(){
+		return self.habilidad() > 70
+	}
+	method habilidad(){
+		return habilidad
+	}
+	method compusoAlMenosUnaCancion(){
+		return albumes.any({album => album.tieneUnaCancion()})
 	}
 }
 

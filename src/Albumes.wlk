@@ -22,6 +22,14 @@ class Album {
 	method cancionMasLarga(){
 		return canciones.max({ cancion => cancion.cantidadDeLetras() })
 	}
+	
+	method cancionConMasDuracion(unaCancion, otraCancion){
+		if(unaCancion.duracion() > otraCancion.duracion()){
+			return unaCancion
+		}else{
+			return otraCancion
+		}
+	}
 
 	method esBuenaVenta(){
 		return unidadesVendidas*100/unidadesALaVenta >= 75
@@ -36,5 +44,10 @@ class Album {
 	}
 	method cancionesConLaPalabra(palabra){
   		return canciones.filter{cancion => cancion.tienePalabra(palabra)}
+ 	}
+ 	method tieneUnaCancion(){
+ 		return canciones.size() > 0
  }
 }
+
+
