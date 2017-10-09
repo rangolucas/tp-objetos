@@ -46,12 +46,11 @@ class Album {
 	method tieneCancionesCortas(){
 		return canciones.all({cancion => cancion.esCorta()})
 	}
+	
 	method cancionesConLaPalabra(palabra){
   		return canciones.filter{cancion => cancion.tienePalabra(palabra)}
  	}
- 	method tieneUnaCancion(){
- 		return canciones.size() > 0
- }
+ 	
 }
 
 
