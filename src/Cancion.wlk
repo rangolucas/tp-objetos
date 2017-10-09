@@ -37,7 +37,18 @@ class Cancion {
 	method letra(){
 		return letra
 	}
-
+	
+	method duraMasQue(unaCancion){
+		return duracion > unaCancion.duracion()
+	}
+	
+	method tieneMasLetrasQue(unaCancion){
+		return self.cantidadDeLetras() > unaCancion.cantidadDeLetras()
+	}
+	
+	method mismoTituloQue(unaCancion){
+		return titulo == unaCancion.titulo()
+	}
 }
 
 class Remix inherits Cancion {
