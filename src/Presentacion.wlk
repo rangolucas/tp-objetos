@@ -44,6 +44,10 @@ class Presentacion {
 	method artistas(listaDeArtistas){
 		artistas = listaDeArtistas
 	}
+	
+	method artistas(){
+		return artistas
+	}
 
 	method lugar(){
 		return lugar
