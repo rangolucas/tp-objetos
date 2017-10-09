@@ -9,11 +9,16 @@ describe "tests tercera entrega"{
 
 	//Canciones:
     var laFamilia = new Cancion("La Familia", "Quiero brindar por mi gente sencilla, por el amor brindo por la familia", 264)
-    var eres = new Cancion("Eres", "Eres lo mejor que me pasï¿½ en la vida, no tengo duda, no habrï¿½ mï¿½s nada despuï¿½s de ti. Eres lo que le dio brillo al dï¿½a a dï¿½a, y asï¿½ serï¿½ por siempre, no cambiarï¿½, hasta el final de mi    var cisne = new Cancion("Cisne","Hoy el viento se abriï¿½ quedï¿½ vacï¿½o el aire una vez mï¿½s y el manantial brotï¿½ y nadie estï¿½ aquï¿½ y puedo ver que solo estallan las hojas al b    var almaDeDiamante =new Cancion("Alma de Diamante", "Ven a mï¿½ con tu dulce luz alma de diamante. Y aunque el sol se nuble despuï¿½s sos alma de diamante. Cielo o piel silencio o verdad sos alma de diamante. Por eso ven asï¿½ con la humanidad alma de diamante",216    var crisantemo =new Cancion("Crisantemo","Tï¿½came junto a esta pared, yo quede por aquï¿½... cuando no hubo mï¿½s luz... quiero mirar a travï¿½s de mi piel... Crisantemo, que se abriï¿½... encuentra el camino hacia el cielo",1    var corazonAmericano = new Cancion ("Corazon Americano","Canta corazï¿½n, canta mï¿½s alto, que tu pena al fin se va marchando, el nuevo milenio ha de encontrarnos, junto corazï¿½n, como soï¿½amos.",154) 	var cancionDePrueba = new Cancion ("Corazon Americano", "Hola, soy una cancion de prueba do re mi fa sol la si amor ", 8)
+    var eres = new Cancion("Eres", "Eres lo mejor que me pasó en la vida, no tengo duda, no habrá más nada después de ti. Eres lo que le dio brillo al día a día, y así será por siempre, no cambiará, hasta el final de mis días.",145)    
+    var cisne = new Cancion("Cisne","Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar", 312)
+    var almaDeDiamante = new Cancion("Alma de Diamante", "Ven a mí con tu dulce luz alma de diamante. Y aunque el sol se nuble después sos alma de diamante. Cielo o piel silencio o verdad sos alma de diamante. Por eso ven así con la humanidad alma de diamante",216)    
+    var crisantemo = new Cancion("Crisantemo","Tócame junto a esta pared, yo quede por aquí... cuando no hubo más luz... quiero mirar a través de mi piel... Crisantemo, que se abrió... encuentra el camino hacia el cielo",175)      
+    var corazonAmericano = new Cancion ("Corazon Americano","Canta corazón, canta más alto, que tu pena al fin se va marchando, el nuevo milenio ha de encontrarnos, junto corazón, como soñamos.",154)
+    var cancionDePrueba = new Cancion ("Corazon Americano", "Hola, soy una cancion de prueba do re mi fa sol la si amor ", 8)
 	//Remix
 	var laFamiliaRemix = new Remix (laFamilia)
 	//Mashup
-	var eresCisneMashup = new Mashup (#{eres,cisne})
+	//var eresCisneMashup = new Mashup ([eres,cisne])
 	    
 	//Albumes:    
 	var laSole = new Album("La Sole",new Date(04, 02, 2005), 200000, 130000,#{eres, corazonAmericano})
@@ -31,30 +36,61 @@ describe "tests tercera entrega"{
 	fixture{luisAlberto.agregarAlbum(justCrisantemo)}
 	   
 	test "la letra de 'eres' es mas larga que la de 'laFamilia'"{
-	    assert.that(eres.tieneMasLetraQue(laFamilia))
+	    assert.that(eres.tieneMasLetrasQue(laFamilia))
 	}
 	
 	test "corazonAmericano es mas corta que crisantemo"{
-	    assert.notThat(corazonAmericano.esMasLargaQue(crisantemo))
+	    assert.notThat(corazonAmericano.duraMasQue(crisantemo))
 	}
 	
 	test "cancionDePrueba se llama igual que corazonAmericano"{
 	    assert.that(cancionDePrueba.mismoTituloQue(corazonAmericano))
 	}
+    
+   test "joaquin interpreta bien la Familia por ser de su autoria"{
+       assert.that(joaquin.interpretaBien(laFamilia))
+   }
+        
+    test "kike interpreta mal eres"{
+       assert.notThat(kike.interpretaBien(eres))
+   }
+
+    
+    test "soledad interpreta bien cancion de prueba"{
+       assert.that(soledad.interpretaBien(cancionDePrueba))
+   }
 	
-	
-	test "kike quiere tocar en el pdpalooza y no puede porque no tiene ninguna cancion de su autoria."{
-	        pdpalooza.agregarMusico(kike)
-	        assert.equals(#{}, pdpalooza.artistas())
-	}
-	    
-	test "luis alberto quiere tocar en el pdpalooza, y puede porque cumple los requisitos pedidos"{
-	    pdpalooza.agregarMusico(luisAlberto)
-	    assert.equals(#{}, pdpalooza.artistas())
-	}  
-	
-	test "pinonFijo puede tocar en el pdpalooza" {
-	    pdpalooza.agregarMusico(pinonFijo)
-	    assert.equals(#{pinonFijo}, pdpalooza.artistas())
-	}
+	test "El remix de La Familia dura 792"{
+        assert.equals(792,laFamiliaRemix.duracion() )
+    }
+    
+    test "Se agrega 'mueve tu cuelpo baby' al principio y 'yeah yeah' al final del remix de La Familia "{
+        assert.equals("mueve tu cuelpo baby Quiero brindar por mi gente sencilla, por el amor brindo por la familia yeah yeah",laFamiliaRemix.letra() )
+    }
+    
+/*
+  	test "kike quiere tocar en el pdpalooza y no puede porque no tiene ninguna cancion de su autoria."{
+        pdpalooza.agregarMusico(kike)
+        assert.equals(#{}, pdpalooza.artistas())
+    }
+        
+    test "luis alberto quiere tocar en el pdpalooza, y puede porque cumple los requisitos pedidos"{
+        pdpalooza.agregarMusico(luisAlberto)
+        assert.equals(#{}, pdpalooza.artistas())
+    }  
+
+    test "pinonFijo puede tocar en el pdpalooza" {
+        pdpalooza.agregarMusico(pinonFijo)
+        assert.equals(#{pinonFijo}, pdpalooza.artistas())
+    }
+    
+    test "La duracion del mashup eresCisneMashup es de 312 segundos"{
+        assert.equals(312, eresCisneMashup.duracion() )
+    }
+
+    test "El titulo del mashup eresCisneMashup es 'Eres lo mejor que me pasó en la vida, no tengo duda, no habrá más nada después de ti. Eres lo que le dio brillo al día a día, y así será por siempre, no cambiará, hasta el final de mis días. Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar' "{
+        assert.equals("Eres lo mejor que me pasó en la vida, no tengo duda, no habrá más nada después de ti. Eres lo que le dio brillo al día a día, y así será por siempre, no cambiará, hasta el final de mis días. Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar", eresCisneMashup.titulo() )
+    }
+    * 
+    */
 }
