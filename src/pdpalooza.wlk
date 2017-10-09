@@ -5,7 +5,7 @@ import cantantes.*
 
 object pdpalooza inherits Presentacion(new Date(15,12,2017), lunaPark, null) {
 	
-	method agregarMusico(musico){
+        override method agregarArtista(musico){
 		if(musico.listoParaElPdpalooza()){
 			artistas.add(musico)
 		}else {
