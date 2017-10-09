@@ -68,7 +68,6 @@ class Musico {
 				throw new Exception("El musico no puede ejecutar bien la cancion Alicia en el pais")
 			}
 		}
-	}
 	
 	method interpretaBien(cancion) {
 		if(habilidad>60){
