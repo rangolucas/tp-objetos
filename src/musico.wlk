@@ -52,7 +52,7 @@ class Musico {
 		return habilidad
 	}
 	method compusoAlMenosUnaCancion(){
-		if(albumes == #{}) {
+		if(albumes.size() > 0) {
 			return true
 		}else{
 			throw new Exception("No tiene canciones de su autoria.")
