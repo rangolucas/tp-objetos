@@ -9,11 +9,11 @@ describe "tests tercera entrega"{
 
 	//Canciones:
     var laFamilia = new Cancion("La Familia", "Quiero brindar por mi gente sencilla, por el amor brindo por la familia", 264)
-    var eres = new Cancion("Eres", "Eres lo mejor que me pasÛ en la vida, no tengo duda, no habr· m·s nada despuÈs de ti. Eres lo que le dio brillo al dÌa a dÌa, y asÌ ser· por siempre, no cambiar·, hasta el final de mis dÌas.",145)    
-    var cisne = new Cancion("Cisne","Hoy el viento se abriÛ quedÛ vacÌo el aire una vez m·s y el manantial brotÛ y nadie est· aquÌ y puedo ver que solo estallan las hojas al brillar", 312)
-    var almaDeDiamante = new Cancion("Alma de Diamante", "Ven a mÌ con tu dulce luz alma de diamante. Y aunque el sol se nuble despuÈs sos alma de diamante. Cielo o piel silencio o verdad sos alma de diamante. Por eso ven asÌ con la humanidad alma de diamante",216)    
-    var crisantemo = new Cancion("Crisantemo","TÛcame junto a esta pared, yo quede por aquÌ... cuando no hubo m·s luz... quiero mirar a travÈs de mi piel... Crisantemo, que se abriÛ... encuentra el camino hacia el cielo",175)      
-    var corazonAmericano = new Cancion ("Corazon Americano","Canta corazÛn, canta m·s alto, que tu pena al fin se va marchando, el nuevo milenio ha de encontrarnos, junto corazÛn, como soÒamos.",154)
+    var eres = new Cancion("Eres", "Eres lo mejor que me pas√≥ en la vida, no tengo duda, no habr√° m√°s nada despu√©s de ti. Eres lo que le dio brillo al d√≠a a d√≠a, y as√≠ ser√° por siempre, no cambiar√°, hasta el final de mis d√≠as.",145)    
+    var cisne = new Cancion("Cisne","Hoy el viento se abri√≥ qued√≥ vac√≠o el aire una vez m√°s y el manantial brot√≥ y nadie est√° aqu√≠ y puedo ver que solo estallan las hojas al brillar", 312)
+    var almaDeDiamante = new Cancion("Alma de Diamante", "Ven a m√≠ con tu dulce luz alma de diamante. Y aunque el sol se nuble despu√©s sos alma de diamante. Cielo o piel silencio o verdad sos alma de diamante. Por eso ven as√≠ con la humanidad alma de diamante",216)    
+    var crisantemo = new Cancion("Crisantemo","T√≥came junto a esta pared, yo quede por aqu√≠... cuando no hubo m√°s luz... quiero mirar a trav√©s de mi piel... Crisantemo, que se abri√≥... encuentra el camino hacia el cielo",175)      
+    var corazonAmericano = new Cancion ("Corazon Americano","Canta coraz√≥n, canta m√°s alto, que tu pena al fin se va marchando, el nuevo milenio ha de encontrarnos, junto coraz√≥n, como so√±amos.",154)
     var cancionDePrueba = new Cancion ("Corazon Americano", "Hola, soy una cancion de prueba do re mi fa sol la si amor ", 8)
 	//Remix
 	var laFamiliaRemix = new Remix (laFamilia)
@@ -70,17 +70,17 @@ describe "tests tercera entrega"{
     
 /*
   	test "kike quiere tocar en el pdpalooza y no puede porque no tiene ninguna cancion de su autoria."{
-        pdpalooza.agregarMusico(kike)
+        pdpalooza.agregarArtista(kike)
         assert.equals(#{}, pdpalooza.artistas())
     }
         
     test "luis alberto quiere tocar en el pdpalooza, y puede porque cumple los requisitos pedidos"{
-        pdpalooza.agregarMusico(luisAlberto)
+        pdpalooza.agregarArtista(luisAlberto)
         assert.equals(#{}, pdpalooza.artistas())
     }  
 
     test "pinonFijo puede tocar en el pdpalooza" {
-        pdpalooza.agregarMusico(pinonFijo)
+        pdpalooza.agregaArtista(pinonFijo)
         assert.equals(#{pinonFijo}, pdpalooza.artistas())
     }
     
@@ -88,8 +88,8 @@ describe "tests tercera entrega"{
         assert.equals(312, eresCisneMashup.duracion() )
     }
 
-    test "El titulo del mashup eresCisneMashup es 'Eres lo mejor que me pasÛ en la vida, no tengo duda, no habr· m·s nada despuÈs de ti. Eres lo que le dio brillo al dÌa a dÌa, y asÌ ser· por siempre, no cambiar·, hasta el final de mis dÌas. Hoy el viento se abriÛ quedÛ vacÌo el aire una vez m·s y el manantial brotÛ y nadie est· aquÌ y puedo ver que solo estallan las hojas al brillar' "{
-        assert.equals("Eres lo mejor que me pasÛ en la vida, no tengo duda, no habr· m·s nada despuÈs de ti. Eres lo que le dio brillo al dÌa a dÌa, y asÌ ser· por siempre, no cambiar·, hasta el final de mis dÌas. Hoy el viento se abriÛ quedÛ vacÌo el aire una vez m·s y el manantial brotÛ y nadie est· aquÌ y puedo ver que solo estallan las hojas al brillar", eresCisneMashup.titulo() )
+    test "El titulo del mashup eresCisneMashup es 'Eres lo mejor que me pas√≥ en la vida, no tengo duda, no habr√° m√°s nada despu√©s de ti. Eres lo que le dio brillo al d√≠a a d√≠a, y as√≠ ser√° por siempre, no cambiar√°, hasta el final de mis d√≠as. Hoy el viento se abri√≥ qued√≥ vac√≠o el aire una vez m√°s y el manantial brot√≥ y nadie est√° aqu√≠ y puedo ver que solo estallan las hojas al brillar' "{
+        assert.equals("Eres lo mejor que me pas√≥ en la vida, no tengo duda, no habr√° m√°s nada despu√©s de ti. Eres lo que le dio brillo al d√≠a a d√≠a, y as√≠ ser√° por siempre, no cambiar√°, hasta el final de mis d√≠as. Hoy el viento se abri√≥ qued√≥ vac√≠o el aire una vez m√°s y el manantial brot√≥ y nadie est√° aqu√≠ y puedo ver que solo estallan las hojas al brillar", eresCisneMashup.titulo() )
     }
     * 
     */
