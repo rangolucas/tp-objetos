@@ -1,5 +1,7 @@
 import Presentacion.*
 import lugares.*
+import musico.*
+import cantantes.*
 
 object pdpalooza inherits Presentacion(new Date(15,12,2017), lunaPark, null) {
 	

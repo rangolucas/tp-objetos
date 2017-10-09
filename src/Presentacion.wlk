@@ -33,7 +33,7 @@ class Presentacion {
 		return artistas.contains(artista) && artistas.size() > 1
 	}
 	
-	method agregarArtistas(artista){
+	method agregarArtista(artista){
 		artistas.add(artista)
 	}
 	
