@@ -1,4 +1,5 @@
 import Cancion.*
+import criterios.*
 
 class Album {
 	var titulo
@@ -20,7 +21,7 @@ class Album {
 	}
 	
 	method cancionMasLarga(){
-		return canciones.max({ cancion => cancion.cantidadDeLetras() })
+		return self.compararCanciones(porLetra)
 	}
 	
 	method cancionConMasDuracion(unaCancion, otraCancion){
@@ -46,12 +47,17 @@ class Album {
 	method tieneCancionesCortas(){
 		return canciones.all({cancion => cancion.esCorta()})
 	}
+	
 	method cancionesConLaPalabra(palabra){
   		return canciones.filter{cancion => cancion.tienePalabra(palabra)}
  	}
+ 	
  	method tieneUnaCancion(){
  		return canciones.size() > 0
- }
+ 	}
+ 	
+ 	method compararCanciones(unCriterio){
+ 		return unCriterio.comparar(canciones)
+ 	}
+ 	 	
 }
-
-
