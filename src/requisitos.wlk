@@ -1,5 +1,6 @@
 import musico.*
 import Cancion.*
+import Excepciones.*
 
 object habilidadMayorA70 {
 	method cumple(musico) {
