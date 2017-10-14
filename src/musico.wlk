@@ -70,11 +70,7 @@ class Musico {
 		}
 	
 	method interpretaBien(cancion) {
-		if(habilidad>60){
-			return true
-		}else{
-			return albumes.any({album=>album.estaEnAlbum(cancion)})
-		}
+		return habilidad>60 || albumes.any({album=>album.estaEnAlbum(cancion)})		
 	}
 	
 }
@@ -88,11 +84,7 @@ class MusicoVocalista inherits Musico {
 	}
 	
 	override method interpretaBien(cancion) {
-    if(cancion.tienePalabra(palabra)){
-        return true
-    }else{
-        return super(cancion)
-    }
+    return cancion.tienePalabra(palabra) ||super(cancion)
 }
 
 	method cobra(presentacion) {
@@ -118,11 +110,7 @@ class MusicoDeGrupo inherits Musico {
 	}
 
 		override method interpretaBien(cancion) {
-    if(cancion.duraMasDe(300)){
-        return true
-    }else{
-        return super(cancion)
-    }
+return cancion.duraMasDe(300)||super(cancion)
 }
 
 	method habilidad(presentacion) { 
