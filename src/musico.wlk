@@ -11,12 +11,12 @@ class Musico {
 	constructor(unGrupo, unaHabilidad, unosAlbumes){
 		grupo = unGrupo
 		habilidad = unaHabilidad
-		albumes= unosAlbumes
+		albumes = unosAlbumes
 		
 	}
 	
 	method agregarAlbum(album){
-	albumes.add(album)	
+		albumes.add(album)	
 	}
 	
 	method cantaEnGrupo(presentacion) {
@@ -29,7 +29,7 @@ class Musico {
 	
 	method cancionesConPalabra(palabra){
   		return albumes.flatMap({ album => album.cancionesConLaPalabra(palabra) })
- }
+ 	}
 	
 	method duracionObra(){
 		return albumes.sum({album => album.duracion()})
@@ -38,41 +38,22 @@ class Musico {
 	method laPego(){
 		return albumes.all({ album => album.esBuenaVenta() })		
 	}
-	method listoParaElPdpalooza(){
-		return (self.granHabilidad() && self.compusoAlMenosUnaCancion() && self.puedeEjecutarAliciaEnElPais())
+	
+	method cumpleCon(requisito){ //requisitos.wlk
+		return requisito.cumple(self)
 	}
-	method granHabilidad(){
-		if(self.habilidad() > 70){
-			return true
-		}else{
-			throw new Exception("La habilidad del musico no es mayor a 70.")
-		}
+
+	method compusoUnaCancion(){
+		return albumes.size() > 0 && albumes.forEach{album => album.tieneUnaCancion()}
 	}
+
 	method habilidad(){
 		return habilidad
 	}
-	method compusoAlMenosUnaCancion(){
-		if(albumes.size() > 0) {
-			return true
-		}else{
-			throw new Exception("No tiene canciones de su autoria.")
-		}
-	}
-		method puedeEjecutarAliciaEnElPais(){
-			if(self.interpretaBien(new Cancion("Cancion de Alicia en el pais", "Quién sabe Alicia, este
-			 país no estuvo hecho porque sí. Te vas a ir, vas a salir pero te quedas, ¿dónde más vas a ir?
-			 Y es que aquí, sabes el trabalenguas, trabalenguas, el asesino te asesina, y es mucho para ti. 
-			Se acabó ese juego que te hacía feliz.", 512))){
-				return true
-			}else{
-				throw new Exception("El musico no puede ejecutar bien la cancion Alicia en el pais")
-			}
-		}
 	
 	method interpretaBien(cancion) {
-		return habilidad>60 || albumes.any({album=>album.estaEnAlbum(cancion)})		
+		return habilidad > 60 || albumes.any({album=>album.estaEnAlbum(cancion)})		
 	}
-	
 }
 
 class MusicoVocalista inherits Musico {
@@ -84,8 +65,8 @@ class MusicoVocalista inherits Musico {
 	}
 	
 	override method interpretaBien(cancion) {
-    return cancion.tienePalabra(palabra) ||super(cancion)
-}
+    	return cancion.tienePalabra(palabra) || super(cancion)
+    }
 
 	method cobra(presentacion) {
 		if (presentacion.esConcurrida()) {
@@ -109,9 +90,9 @@ class MusicoDeGrupo inherits Musico {
 		plus = unPlus
 	}
 
-		override method interpretaBien(cancion) {
-return cancion.duraMasDe(300)||super(cancion)
-}
+	override method interpretaBien(cancion) {
+		return cancion.duraMasDe(300) || super(cancion)
+	}
 
 	method habilidad(presentacion) { 
 		if (self.cantaEnGrupo(presentacion)) {
@@ -120,12 +101,11 @@ return cancion.duraMasDe(300)||super(cancion)
 			return habilidad
 		}
 	}
+	
 	method cobra(presentacion) { 
     	if(self.cantaEnGrupo(presentacion)){ 
       		return 50 
-    } else { 
-      		return 100 
-    } 
-   } 
+    	} else return 100 
+   	} 
 	
 }
