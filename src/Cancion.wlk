@@ -61,16 +61,11 @@ class Remix inherits Cancion {
 
 class Mashup inherits Cancion{
 	constructor(unasCanciones) = super(//titulo,letra,duracion
-	"",
-	(unasCanciones.head()).letra(),
-	unasCanciones.max({cancion => cancion.duracion()})
-	) {
+	"", "una letra", unasCanciones.max({cancion => cancion.duracion()})) {
 		titulo = self.tituloMashup(unasCanciones)
 	}
 	
 	method tituloMashup(unasCanciones){
-		var acumulador
-		unasCanciones.forEach({cancion => acumulador += cancion.letra()+" "})
-		return acumulador.trim()
+		unasCanciones.flatMap({cancion => cancion.letra()}).trim()
 	}
 }
