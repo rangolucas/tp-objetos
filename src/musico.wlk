@@ -38,13 +38,9 @@ class Musico {
 	method laPego(){
 		return albumes.all({ album => album.esBuenaVenta() })		
 	}
-	
-	method cumpleCon(requisito){ //requisitos.wlk
-		return requisito.cumple(self)
-	}
 
 	method compusoUnaCancion(){
-		return albumes.size() > 0 && albumes.forEach{album => album.tieneUnaCancion()}
+		return albumes.size() == 0 || albumes.all{album => album.noTieneCanciones()}
 	}
 
 	method habilidad(){
@@ -54,6 +50,7 @@ class Musico {
 	method interpretaBien(cancion) {
 		return habilidad > 60 || albumes.any({album=>album.estaEnAlbum(cancion)})		
 	}
+	
 }
 
 class MusicoVocalista inherits Musico {

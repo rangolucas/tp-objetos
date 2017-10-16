@@ -9,7 +9,8 @@ object pdpalooza inherits Presentacion(new Date(15,12,2017), lunaPark, null) {
 	var requisitos = #{habilidadMayorA70, compusoUnaCancion, interpretaBienAlicia}
 	
     override method agregarArtista(musico){
-		requisitos.forEach{requisito => musico.cumpleCon(requisito)}
+		requisitos.forEach{requisito => requisito.aplicarA(musico)}
+		self.agregarArtista(musico)
 	}
 
 	method agregarRequisito(requisito){

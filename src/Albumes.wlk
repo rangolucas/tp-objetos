@@ -56,6 +56,10 @@ class Album {
  		return canciones.size() > 0
  	}
  	
+ 	method noTieneCanciones(){
+ 		return canciones.size() == 0
+ 	}
+ 	
  	method compararCanciones(unCriterio){
  		return unCriterio.comparar(canciones)
  	}
