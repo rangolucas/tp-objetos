@@ -3,6 +3,7 @@ import pdpalooza.*
 import cantantes.*
 import Presentacion.*
 import Cancion.*
+import guitarras.*
 import Albumes.*
 
 describe "tests tercera entrega"{
@@ -18,7 +19,7 @@ describe "tests tercera entrega"{
 	//Remix
 	var laFamiliaRemix = new Remix (laFamilia)
 	//Mashup
-	//var eresCisneMashup = new Mashup (#{eres,cisne})
+	var eresCisneMashup = new Mashup (#{eres,cisne})
 	    
 	//Albumes:    
 	var laSole = new Album("La Sole",new Date(04, 02, 2005), 200000, 130000,#{eres, corazonAmericano})
@@ -31,7 +32,7 @@ describe "tests tercera entrega"{
 	var soledad = new MusicoVocalista(null, 55, #{laSole}, 'amor')
 	var joaquin = new MusicoDeGrupo('Pimpinela', 20, #{especialLaFamilia}, 5)
 	var kike = new MusicoDeGrupo(null, 60, #{} , 20)
-	var pinonFijo = new MusicoDeGrupo(null, 60, #{laSole}, 0)     
+	var pinonFijo = new MusicoDeGrupo(null, 80, #{laSole}, 0)     
 	        
 	fixture{luisAlberto.agregarAlbum(justCrisantemo)}
 	   
@@ -68,19 +69,19 @@ describe "tests tercera entrega"{
         assert.equals("mueve tu cuelpo baby Quiero brindar por mi gente sencilla, por el amor brindo por la familia yeah yeah",laFamiliaRemix.letra() )
     }
     
-/*
-  	test "kike quiere tocar en el pdpalooza y no puede porque no tiene ninguna cancion de su autoria."{
-        pdpalooza.agregarArtista(kike)
-        assert.equals(#{}, pdpalooza.artistas())
+  	test "kike (con 75 de habilidad) quiere tocar en el pdpalooza y no puede porque no tiene ninguna cancion de su autoria."{
+  		kike.habilidad(75)
+        assert.throwsExceptionWithMessage("El musico no compuso ninguna cancion", {pdpalooza.agregarArtista(kike)})
     }
         
-    test "luis alberto quiere tocar en el pdpalooza, y puede porque cumple los requisitos pedidos"{
+    test "luis alberto con su fender quiere tocar en el pdpalooza, y puede porque cumple los requisitos pedidos"{
+        luisAlberto.tocarCon(fender)
         pdpalooza.agregarArtista(luisAlberto)
-        assert.equals(#{}, pdpalooza.artistas())
+        assert.equals(#{luisAlberto}, pdpalooza.artistas())
     }  
 
     test "pinonFijo puede tocar en el pdpalooza" {
-        pdpalooza.agregaArtista(pinonFijo)
+        pdpalooza.agregarArtista(pinonFijo)
         assert.equals(#{pinonFijo}, pdpalooza.artistas())
     }
     
@@ -91,6 +92,4 @@ describe "tests tercera entrega"{
     test "El titulo del mashup eresCisneMashup es 'Eres lo mejor que me pasó en la vida, no tengo duda, no habrá más nada después de ti. Eres lo que le dio brillo al día a día, y así será por siempre, no cambiará, hasta el final de mis días. Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar' "{
         assert.equals("Eres lo mejor que me pasó en la vida, no tengo duda, no habrá más nada después de ti. Eres lo que le dio brillo al día a día, y así será por siempre, no cambiará, hasta el final de mis días. Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar", eresCisneMashup.titulo() )
     }
-    * 
-    */
 }

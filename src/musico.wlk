@@ -39,12 +39,16 @@ class Musico {
 		return albumes.all({ album => album.esBuenaVenta() })		
 	}
 
-	method compusoUnaCancion(){
+	method noCompusoUnaCancion(){
 		return albumes.size() == 0 || albumes.all{album => album.noTieneCanciones()}
 	}
 
 	method habilidad(){
 		return habilidad
+	}
+	
+	method habilidad(unaHabilidad){
+		habilidad = unaHabilidad
 	}
 	
 	method interpretaBien(cancion) {
@@ -72,7 +76,7 @@ class MusicoVocalista inherits Musico {
 		else return 400
 	}
 	
-	method habilidad(presentacion) {
+	method habilidadXPresentacion(presentacion) {
 		if (self.cantaEnGrupo(presentacion)) {
 			return habilidad - 20
 		}
@@ -91,7 +95,7 @@ class MusicoDeGrupo inherits Musico {
 		return cancion.duraMasDe(300) || super(cancion)
 	}
 
-	method habilidad(presentacion) { 
+	method habilidadXPresentacion(presentacion) { 
 		if (self.cantaEnGrupo(presentacion)) {
 			return habilidad += plus
 		} else {

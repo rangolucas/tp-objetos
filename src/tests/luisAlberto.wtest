@@ -7,20 +7,20 @@ describe "luisAlberto"{
 		
 	test "Luis Alberto toca con la Fender. Queremos saber su habilidad, y la misma es 80."{
 		luisAlberto.tocarCon(fender)
-		assert.equals(80, luisAlberto.habilidad(new Presentacion(new Date(20, 04, 2017), lunaPark, luisAlberto)))
+		assert.equals(80, luisAlberto.habilidadXPresentacion(new Presentacion(new Date(20, 04, 2017), lunaPark, luisAlberto)))
 	}
 	test "Luis Alberto toca ahora con la Gibson sana. Queremos saber su habilidad, y la misma es 100."{
 		luisAlberto.tocarCon(gibson)
-		assert.equals(100, luisAlberto.habilidad(new Presentacion(new Date(20, 04, 2017), lunaPark, luisAlberto)))
+		assert.equals(100, luisAlberto.habilidadXPresentacion(new Presentacion(new Date(20, 04, 2017), lunaPark, luisAlberto)))
 	}
 	test "Alguien trata mal a la Gibson y ahora no está sana, su habilidad es 40."{
 		luisAlberto.tocarCon(gibson)
 		luisAlberto.tratarMal(gibson)
-		assert.equals(40, luisAlberto.habilidad(new Presentacion(new Date(20, 04, 2017), lunaPark, luisAlberto)))
+		assert.equals(40, luisAlberto.habilidadXPresentacion(new Presentacion(new Date(20, 04, 2017), lunaPark, luisAlberto)))
 	}
 	test "Luis Alberto toca con la Gibson. Como toca la Gibson como viene de fábrica, esta sana y su valor es 15 UG. Su habilidad es 100."{
 		luisAlberto.tocarCon(gibson)
-		assert.equals(100, luisAlberto.habilidad(new Presentacion(new Date(20, 04, 2017), lunaPark, luisAlberto)))
+		assert.equals(100, luisAlberto.habilidadXPresentacion(new Presentacion(new Date(20, 04, 2017), lunaPark, luisAlberto)))
 	}
 	test "Luis alberto interpreta bien 'La Familia'"{
 		assert.that(luisAlberto.interpretaBien("La familia"))

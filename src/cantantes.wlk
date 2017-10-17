@@ -10,11 +10,12 @@ object luisAlberto inherits Musico( null , null, #{}){
 
 	method tocarCon(guitar){
 		guitarra = guitar
+		habilidad = 100.max(guitar.valor())
 	}
 	override method interpretaBien(cancion) {
 		return true
 	}
-	method habilidad(presentacion) {
+	method habilidadXPresentacion(presentacion) {
 		self.efectoGuitarra()
 		return habilidad
 		}

@@ -9,18 +9,21 @@ describe "lucia"{
 	var lucia = new MusicoVocalista('Pimpinela', 70, #{}, 'familia' )
 	
 	test "Lucia canta en Pimpinela, su habilidad es de 50."{
-		assert.equals(50, lucia.habilidad(new Presentacion(new Date(20, 04, 2017), lunaPark, #{joaquin, lucia})))
+		assert.equals(50, lucia.habilidadXPresentacion(new Presentacion(new Date(20, 04, 2017), lunaPark, #{joaquin, lucia})))
 	}
 	test "Lucia canta en el grupo pimpinela, y lanza su carrera como solista dejando dicho grupo. Su habilidad es de 70."{
-		assert.equals(70, lucia.habilidad(new Presentacion(new Date(20, 04, 2017), lunaPark, #{lucia})))
+		assert.equals(70, lucia.habilidadXPresentacion(new Presentacion(new Date(20, 04, 2017), lunaPark, #{lucia})))
 	}
 	test "Lucia interpreta bien la cancion 'La Familia'."{
 		assert.that(lucia.interpretaBien(new Cancion("La Familia" , "Quiero brindar por mi gente sencilla, por el amor brindo por la familia.", 264)))
 	}
+	/* ESTE TEST YA NO ES VALIDO (ENTREGA 3)
 	test "Lucia no interpreta bien la cancion 'Cisne', porque no contiene la palabra 'familia'."{
 		assert.notThat(lucia.interpretaBien(new Cancion("Cisne", "Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó
 		 									y nadie está aquí y puedo ver que solo estallan las hojas al brillar.", 312)))
 	}
+	* 
+	*/
 	test "Lucia hace una presentacion en Luna Park, cobra 500, porque la capacidad del Luna es mayor a 5000."{
 		assert.equals(500, lucia.cobra(new Presentacion(new Date(20, 04, 2017), lunaPark, #{lucia, joaquin})))
 	}
