@@ -19,12 +19,9 @@ class Banda {
 			musicos.add(unMusico)
 		}
 		
-		method habilidad(unaPresentacion){
-		if(quimica){	
-			return self.habilidadBanda() +0.1*self.habilidadBanda()
-			}else{
-			return self.habilidadBanda()
-			}
+		method habilidadXPresentacion(unaPresentacion){
+			if(quimica) return self.habilidadBanda() + 0.1*self.habilidadBanda()
+			else return self.habilidadBanda()
 		}
 		
 		method tocar(unaCancion){
