@@ -6,13 +6,12 @@ class Banda {
 		
 		var representante
 		var musicos = #{}
-		var habilidad
-		var quimica
+		var quimica = true
 		
-		constructor(unRepresentante, unosMusicos, unaHabilidad, unaQuimica){
+		
+		constructor(unRepresentante, unosMusicos, unaQuimica){
 			representante = unRepresentante
 			musicos = unosMusicos
-			habilidad = unaHabilidad
 			quimica = unaQuimica
 		}
 		
@@ -21,8 +20,11 @@ class Banda {
 		}
 		
 		method habilidadBanda(){
-			habilidad = musicos.sum({musico => musico.habilidad()}) + 0.1*quimica
-		}
+		if(quimica){	
+			return self.habilidad() +0.1*self.habilidad()
+			}else{
+			return self.habilidad()}
+		
 		
 		method tocar(unaCancion){
 			return musicos.all({musico => musico.interpretaBien(unaCancion)})
@@ -32,12 +34,12 @@ class Banda {
 			return (musicos.sum({musico => musico.cobra(unaPresentacion)}) + representante.cobro())
 		}
 		
-		method quimica(){
-			return quimica
+		method quimica(bool){
+			quimica = bool
 		}
 		
-		method habilidad(){
-			return habilidad
-		}
+		method habilidad(){	
+				return musicos.sum({musico => musico.habilidad()})
+			}
 			
 }
