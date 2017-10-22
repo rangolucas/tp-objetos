@@ -61,6 +61,6 @@ class Presentacion {
 		fecha = new Date(d, m, a)
 	}
 	method laMagia(){
-		artistas.sum({artista => artista.habilidad(self)})
+		artistas.sum({artista => artista.habilidadXPresentacion(self)})
 	}
 }
