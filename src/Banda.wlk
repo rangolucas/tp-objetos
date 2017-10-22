@@ -19,9 +19,9 @@ class Banda {
 			musicos.add(unMusico)
 		}
 		
-		method habilidadXPresentacion(unaPresentacion){
-			if(quimica) return self.habilidadBanda() + 0.1*self.habilidadBanda()
-			else return self.habilidadBanda()
+		method habilidad(){
+			if(quimica) return self.sumaHabilidades() + 0.1*self.sumaHabilidades()
+			else return self.sumaHabilidades()
 		}
 		
 		method tocar(unaCancion){
@@ -36,8 +36,8 @@ class Banda {
 			quimica = bool
 		}
 		
-		method habilidadBanda(){	
-				return musicos.sum({musico => musico.habilidad()})
-			}
+		method sumaHabilidades(){	
+			return musicos.sum({musico => musico.habilidad()})
+		}
 			
 }
