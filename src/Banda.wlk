@@ -24,6 +24,10 @@ class Banda {
 			else return self.sumaHabilidades()
 		}
 		
+		method habilidadXPresentacion(presentacion){ //REVISAR
+			return self.habilidad()
+		}
+		
 		method tocar(unaCancion){
 			return musicos.all({musico => musico.interpretaBien(unaCancion)})
 		}
