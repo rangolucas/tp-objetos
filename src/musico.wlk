@@ -55,6 +55,10 @@ class Musico {
 		return habilidad > 60 || albumes.any({album=>album.estaEnAlbum(cancion)})		
 	}
 	
+	method cualesCantaBien(unaListaDeCanciones){
+		 return unaListaDeCanciones.filter({cancion => self.interpretaBien(cancion)})
+	}
+	
 }
 
 class MusicoVocalista inherits Musico {
