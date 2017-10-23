@@ -18,18 +18,18 @@ describe "lucia"{
 	test "Lucia interpreta bien la cancion 'La Familia'."{
 		assert.that(lucia.categoria().interpretaBien(new Cancion("La Familia" , "Quiero brindar por mi gente sencilla, por el amor brindo por la familia.", 264)))
 	}
-	/* ESTE TEST YA NO ES VALIDO (ENTREGA 3)
+
 	test "Lucia no interpreta bien la cancion 'Cisne', porque no contiene la palabra 'familia'."{
 		assert.notThat(lucia.interpretaBien(new Cancion("Cisne", "Hoy el viento se abri� qued� vac�o el aire una vez m�s y el manantial brot�
 		 									y nadie est� aqu� y puedo ver que solo estallan las hojas al brillar.", 312)))
 	}
-	* 
-	*/
-	/*/
+	
 	test "Lucia hace una presentacion en Luna Park, cobra 500, porque la capacidad del Luna es mayor a 5000."{
-		assert.equals(500, lucia.metodoDeCobro().cobra(new Presentacion(new Date(20, 04, 2017), lunaPark, #{lucia, joaquin})))
+		assert.equals(500, lucia.cobra(new Presentacion(new Date(20, 04, 2017), lunaPark, #{lucia, joaquin})))
 	}
+	
 	test "Lucias hace una presentacion en La Trastienda, cobra 400 porque la misma tiene una capacidad menor a 5000."{
-		assert.equals(400, lucia.metodoDeCobro().cobra(new Presentacion(new Date(15, 11, 2017), trastienda, #{ lucia, joaquin})))
+		assert.equals(400, lucia.cobra(new Presentacion(new Date(15, 11, 2017), trastienda, #{ lucia, joaquin})))
 	}
-}*/
+
+}
