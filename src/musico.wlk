@@ -63,5 +63,20 @@ class Musico {
 		 return unaListaDeCanciones.filter({cancion => self.interpretaBien(cancion)})
 	}
 	
+	method categoria(unaCategoria){
+		categoria = unaCategoria
+	}
+	
+	method categoria(){
+		return categoria
+	}
+	
+	method metodoDeCobro(unMetodoDeCobro){
+		metodoDeCobro = unMetodoDeCobro
+	}
+	
+	method metodoDeCobro(){
+		return metodoDeCobro
+	}
 }
 
