@@ -2,11 +2,12 @@ import Presentacion.*
 import lugares.*
 import Cancion.*
 import musico.*
+import categoriasMusico.*
 
 describe "joaquin" {
 	
-	var joaquin = new MusicoDeGrupo('Pimpinela', 20, #{}, 5)
-	var lucia = new MusicoVocalista('Pimpinela', 70, #{}, 'familia' )
+	var joaquin = new MusicoDeGrupo('Pimpinela', 20, #{},new Larguero(300) ,new PorCuantosSePresentan(100),5)
+	var lucia = new MusicoVocalista('Pimpinela', 70, #{}, new Palabrero('familia'), new PorCapacidad(5000,500))
 
 test "joaquin canta el grupo pimpinela, su habilidad pasa a ser 25" {
 	assert.equals(25,joaquin.habilidadXPresentacion( new Presentacion(new Date(20, 04, 2017), lunaPark, #{joaquin, lucia}) ))
@@ -17,19 +18,19 @@ test "joaquin deja el grupo pimpinela, su habilidad pasa a ser 20" {
 }
 
 test "joaquin interpreta bien 'cisne'"{
-	assert.that(joaquin.interpretaBien( new Cancion("Cisne" ,"Hoy el viento se abrio quedo vacio el aire una vez mas y el manantial broto y nadie esta aqui y puedo ver que solo estallan las hojas al brillar",312)))
+	assert.that(joaquin.categoria().interpretaBien( new Cancion("Cisne" ,"Hoy el viento se abrio quedo vacio el aire una vez mas y el manantial broto y nadie esta aqui y puedo ver que solo estallan las hojas al brillar",312)))
 }
 
 test "joaquin no interpreta bien 'La Familia'"{
-	assert.notThat(joaquin.interpretaBien( new Cancion("La Familia" ,"Quiero brindar por mi gente sencilla, por el amor brindo por la familia", 264)))
+	assert.notThat(joaquin.categoria().interpretaBien( new Cancion("La Familia" ,"Quiero brindar por mi gente sencilla, por el amor brindo por la familia", 264)))
 }
 
 test "joaquin cobra 50 en lunaPark" {
-	assert.equals(50, joaquin.cobra(new Presentacion(new Date(20, 04, 2017), lunaPark, #{joaquin, lucia})))
+	assert.equals(50, joaquin.metodoDeCobro().cobra(new Presentacion(new Date(20, 04, 2017), lunaPark, #{joaquin, lucia})))
 }
 
 test "joaquin cobra 100 en trastienda (por trabajar solo)" {
-	assert.equals(100, joaquin.cobra(new Presentacion(new Date(15, 11, 2017), trastienda, #{joaquin})))
+	assert.equals(100, joaquin.metodoDeCobro().cobra(new Presentacion(new Date(15, 11, 2017), trastienda, #{joaquin})))
 }
 
 }
