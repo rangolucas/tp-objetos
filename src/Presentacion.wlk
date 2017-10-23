@@ -18,7 +18,7 @@ class Presentacion {
 	}
 	
 	method cantidadPersonas(){
-		return lugar.cantidadPersonas(fecha)
+		return lugar.cantidadPersonasXFecha(fecha)
 	}
 	
 	method esConcurrida(){
