@@ -7,12 +7,15 @@ class Musico {
 	var grupo
 	var habilidad
 	var albumes = #{}
+	var categoria
+	var metodoDeCobro
 	
-	constructor(unGrupo, unaHabilidad, unosAlbumes){
+	constructor(unGrupo, unaHabilidad, unosAlbumes, unaCategoria, unMetodoDeCobro){
 		grupo = unGrupo
 		habilidad = unaHabilidad
 		albumes = unosAlbumes
-		
+		categoria = unaCategoria
+		metodoDeCobro = unMetodoDeCobro
 	}
 	
 	method agregarAlbum(album){
@@ -52,7 +55,8 @@ class Musico {
 	}
 	
 	method interpretaBien(cancion) {
-		return habilidad > 60 || albumes.any({album=>album.estaEnAlbum(cancion)})		
+		return (habilidad > 60 || albumes.any({album=>album.estaEnAlbum(cancion)})) &&
+		categoria.interpretaBien(cancion)	
 	}
 	
 	method cualesCantaBien(unaListaDeCanciones){
@@ -61,56 +65,3 @@ class Musico {
 	
 }
 
-class MusicoVocalista inherits Musico {
-
-	var palabra
-
-	constructor(unGrupo, unaHabilidad, unosAlbumes , unaPalabra) = super(unGrupo, unaHabilidad, unosAlbumes) {
-		palabra = unaPalabra
-	}
-	
-	override method interpretaBien(cancion) {
-    	return cancion.tienePalabra(palabra) || super(cancion)
-    }
-
-	method cobra(presentacion) {
-		if (presentacion.esConcurrida()) {
-			return 500
-		}
-		else return 400
-	}
-	
-	method habilidadXPresentacion(presentacion) {
-		if (self.cantaEnGrupo(presentacion)) {
-			return habilidad - 20
-		}
-		else return habilidad
-	}
-}
-
-class MusicoDeGrupo inherits Musico {
-	var plus	
-	
-	constructor(unGrupo, unaHabilidad, unosAlbumes ,unPlus) = super(unGrupo, unaHabilidad, unosAlbumes){ 
-		plus = unPlus
-	}
-
-	override method interpretaBien(cancion) {
-		return cancion.duraMasDe(300) || super(cancion)
-	}
-
-	method habilidadXPresentacion(presentacion) { 
-		if (self.cantaEnGrupo(presentacion)) {
-			return habilidad += plus
-		} else {
-			return habilidad
-		}
-	}
-	
-	method cobra(presentacion) { 
-    	if(self.cantaEnGrupo(presentacion)){ 
-      		return 50 
-    	} else return 100 
-   	} 
-	
-}

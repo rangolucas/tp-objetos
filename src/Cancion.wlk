@@ -49,6 +49,10 @@ class Cancion {
 	method mismoTituloQue(unaCancion){
 		return titulo == unaCancion.titulo()
 	}
+	
+	method tieneDuracionImpar(){
+		return duracion.odd()
+	}
 }
 
 class Remix inherits Cancion {

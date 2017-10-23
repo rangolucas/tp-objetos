@@ -4,7 +4,7 @@ import lugares.*
 import musico.*
 import Albumes.*
 
-object luisAlberto inherits Musico( null , null, #{}){
+object luisAlberto inherits Musico( null , null, #{}, null, null){
 
 	var guitarra
 
@@ -12,6 +12,7 @@ object luisAlberto inherits Musico( null , null, #{}){
 		guitarra = guitar
 		habilidad = 100.max(guitar.valor())
 	}
+	
 	override method interpretaBien(cancion) {
 		return true
 	}

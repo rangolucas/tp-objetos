@@ -60,7 +60,12 @@ class Presentacion {
 	method fecha(d, m, a){
 		fecha = new Date(d, m, a)
 	}
+	
 	method laMagia(){
 		artistas.sum({artista => artista.habilidadXPresentacion(self)})
+	}
+	
+	method artistasMultiples(){
+		return artistas.size() > 1
 	}
 }
