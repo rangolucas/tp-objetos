@@ -25,10 +25,11 @@ describe "lucia"{
 	}
 	* 
 	*/
+	/*/
 	test "Lucia hace una presentacion en Luna Park, cobra 500, porque la capacidad del Luna es mayor a 5000."{
 		assert.equals(500, lucia.metodoDeCobro().cobra(new Presentacion(new Date(20, 04, 2017), lunaPark, #{lucia, joaquin})))
 	}
 	test "Lucias hace una presentacion en La Trastienda, cobra 400 porque la misma tiene una capacidad menor a 5000."{
 		assert.equals(400, lucia.metodoDeCobro().cobra(new Presentacion(new Date(15, 11, 2017), trastienda, #{ lucia, joaquin})))
 	}
-}
+}*/
