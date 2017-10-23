@@ -59,6 +59,10 @@ class Musico {
 		categoria.interpretaBien(cancion)	
 	}
 	
+	method cobra(presentacion){
+		return metodoDeCobro.cobra(presentacion)
+	}
+	
 	method cualesCantaBien(unaListaDeCanciones){
 		 return unaListaDeCanciones.filter({cancion => self.interpretaBien(cancion)})
 	}
