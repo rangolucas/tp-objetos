@@ -84,3 +84,26 @@ class Musico {
 	}
 }
 
+class MusicoVocalista inherits Musico {
+	constructor(unGrupo, unaHabilidad, unosAlbumes, unaCategoria, unMetodoDeCobro) = 
+	super(unGrupo, unaHabilidad, unosAlbumes, unaCategoria, unMetodoDeCobro)
+	
+  	method habilidadXPresentacion(presentacion) { 
+    	if (self.cantaEnGrupo(presentacion)) return habilidad - 20 
+   		else return habilidad 
+  	}  
+}
+
+class MusicoDeGrupo inherits Musico {
+	var plus
+	
+	constructor(unGrupo, unaHabilidad, unosAlbumes, unaCategoria, unMetodoDeCobro, unPlus) = 
+	super(unGrupo, unaHabilidad, unosAlbumes, unaCategoria, unMetodoDeCobro){
+		plus = unPlus
+	}
+	
+	method habilidadXPresentacion(presentacion) {  
+    	if (self.cantaEnGrupo(presentacion)) return habilidad += plus 
+    	else return habilidad
+   	} 
+}
