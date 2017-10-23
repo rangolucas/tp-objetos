@@ -2,16 +2,17 @@ import cantantes.*
 import Albumes.*
 import Cancion.*
 import musico.*
+import categoriasMusico.*
 
 describe"Tests segunda entrega"{
     
     //Canciones:
     var laFamilia = new Cancion("La Familia", "Quiero brindar por mi gente sencilla, por el amor brindo por la familia", 264)
-    var eres = new Cancion("Eres", "Eres lo mejor que me pasó en la vida, no tengo duda, no habrá más nada después de ti. Eres lo que le dio brillo al día a día, y así será por siempre, no cambiará, hasta el final de mis días.",145)    
-    var cisne = new Cancion("Cisne","Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar", 312)
-    var almaDeDiamante =new Cancion("Alma de Diamante", "Ven a mí con tu dulce luz alma de diamante. Y aunque el sol se nuble después sos alma de diamante. Cielo o piel silencio o verdad sos alma de diamante. Por eso ven así con la humanidad alma de diamante",216)    
-    var crisantemo =new Cancion("Crisantemo","Tócame junto a esta pared, yo quede por aquí... cuando no hubo más luz... quiero mirar a través de mi piel... Crisantemo, que se abrió... encuentra el camino hacia el cielo",175)      
-    var corazonAmericano = new Cancion ("Corazon Americano","Canta corazón, canta más alto, que tu pena al fin se va marchando, el nuevo milenio ha de encontrarnos, junto corazón, como soñamos.",154)    
+    var eres = new Cancion("Eres", "Eres lo mejor que me pasï¿½ en la vida, no tengo duda, no habrï¿½ mï¿½s nada despuï¿½s de ti. Eres lo que le dio brillo al dï¿½a a dï¿½a, y asï¿½ serï¿½ por siempre, no cambiarï¿½, hasta el final de mis dï¿½as.",145)    
+    var cisne = new Cancion("Cisne","Hoy el viento se abriï¿½ quedï¿½ vacï¿½o el aire una vez mï¿½s y el manantial brotï¿½ y nadie estï¿½ aquï¿½ y puedo ver que solo estallan las hojas al brillar", 312)
+    var almaDeDiamante =new Cancion("Alma de Diamante", "Ven a mï¿½ con tu dulce luz alma de diamante. Y aunque el sol se nuble despuï¿½s sos alma de diamante. Cielo o piel silencio o verdad sos alma de diamante. Por eso ven asï¿½ con la humanidad alma de diamante",216)    
+    var crisantemo =new Cancion("Crisantemo","Tï¿½came junto a esta pared, yo quede por aquï¿½... cuando no hubo mï¿½s luz... quiero mirar a travï¿½s de mi piel... Crisantemo, que se abriï¿½... encuentra el camino hacia el cielo",175)      
+    var corazonAmericano = new Cancion ("Corazon Americano","Canta corazï¿½n, canta mï¿½s alto, que tu pena al fin se va marchando, el nuevo milenio ha de encontrarnos, junto corazï¿½n, como soï¿½amos.",154)    
     
     //Albumes:    
     var laSole = new Album("La Sole",new Date(04, 02, 2005), 200000, 130000,#{eres, corazonAmericano})
@@ -21,9 +22,9 @@ describe"Tests segunda entrega"{
     
     //Musicos:
     
-   var soledad = new MusicoVocalista(null, 55, #{laSole}, 'amor')
-   var joaquin = new MusicoDeGrupo('Pimpinela', 20, #{especialLaFamilia}, 5)
-   var kike = new MusicoDeGrupo(null, 60, #{} , 20)
+   var soledad = new MusicoVocalista(null, 55, #{laSole}, new Palabrero('amor'),null)
+   var joaquin = new MusicoDeGrupo('Pimpinela', 20, #{especialLaFamilia},new Larguero(300) ,new PorCuantosSePresentan(100),5)
+   var kike = new MusicoDeGrupo(null, 60, #{} ,new Larguero(300),null, 20)
    
    
  

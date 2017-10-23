@@ -6,7 +6,7 @@ import categoriasMusico.*
 
 describe "lucia"{
 	
-	var joaquin = new MusicoDeGrupo('Pimpinela', 20, #{},new Larguero(300) ,new PorCuantosSePresentan(100),null)
+	var joaquin = new MusicoDeGrupo('Pimpinela', 20, #{},new Larguero(300) ,new PorCuantosSePresentan(100),5)
 	var lucia = new MusicoVocalista('Pimpinela', 70, #{}, new Palabrero('familia'), new PorCapacidad(5000,500))
 
 	test "Lucia canta en Pimpinela, su habilidad es de 50."{
