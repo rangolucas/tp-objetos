@@ -5,6 +5,7 @@ import Presentacion.*
 import Cancion.*
 import guitarras.*
 import Albumes.*
+import categoriasMusico.*
 
 describe "tests tercera entrega"{
 
@@ -29,10 +30,9 @@ describe "tests tercera entrega"{
 	
 	//Musicos:
 	    
-	var soledad = new MusicoVocalista(null, 55, #{laSole}, 'amor')
-	var joaquin = new MusicoDeGrupo('Pimpinela', 20, #{especialLaFamilia}, 5)
-	var kike = new MusicoDeGrupo(null, 60, #{} , 20)
-	var pinonFijo = new MusicoDeGrupo(null, 80, #{laSole}, 0)     
+	var soledad = new MusicoVocalista(null, 65, #{laSole}, new Palabrero("amor"), null)
+	var joaquin = new MusicoDeGrupo('Pimpinela', 20, #{especialLaFamilia}, new Larguero(0), null, 5)
+	var kike = new MusicoDeGrupo(null, 60, #{}, new Larguero(0), null, 20)  
 	        
 	fixture{luisAlberto.agregarAlbum(justCrisantemo)}
 	   
@@ -49,7 +49,7 @@ describe "tests tercera entrega"{
 	}
     
    test "joaquin interpreta bien la Familia por ser de su autoria"{
-       assert.that(joaquin.interpretaBien(laFamilia))
+       	assert.that(joaquin.interpretaBien(laFamilia))
    }
         
     test "kike interpreta mal eres"{
@@ -79,11 +79,6 @@ describe "tests tercera entrega"{
         pdpalooza.agregarArtista(luisAlberto)
         assert.equals(#{luisAlberto}, pdpalooza.artistas())
     }  
-
-    test "pinonFijo puede tocar en el pdpalooza" {
-        pdpalooza.agregarArtista(pinonFijo)
-        assert.equals(#{pinonFijo}, pdpalooza.artistas())
-    }
     
     test "La duracion del mashup eresCisneMashup es de 312 segundos"{
         assert.equals(312, eresCisneMashup.duracion() )

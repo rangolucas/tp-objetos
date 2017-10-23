@@ -1,0 +1,80 @@
+import categoriasMusico.*
+import musico.*
+import Cancion.*
+import Presentacion.*
+import lugares.*
+
+describe "tests cuarta entrega"{
+	
+	//artistas
+	var lucas = new Musico (null, 50000, #{}, new Palabrero("eres"), new PorCapacidad(1000, 250))
+	var martin = new Musico (null, 61, #{}, new Imparero(), new PorCuantosSePresentan(500))
+	var chano = new Musico (null, 61, #{}, new Larguero(300), new PorInflacion(100, new Date(20, 04, 2018), 10))
+	
+	//canciones
+	var eres = new Cancion("Eres", "Eres lo mejor que me pasó en la vida, no tengo duda, no habrá más nada después de ti. Eres lo que le dio brillo al día a día, y así será por siempre, no cambiará, hasta el final de mis días.",145)
+	var laFamilia = new Cancion("La Familia", "Quiero brindar por mi gente sencilla, por el amor brindo por la familia", 264)
+	var cisne = new Cancion("Cisne","Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar", 312)
+	var almaDeDiamante = new Cancion("Alma de Diamante", "Ven a mí con tu dulce luz alma de diamante. Y aunque el sol se nuble después sos alma de diamante. Cielo o piel silencio o verdad sos alma de diamante. Por eso ven así con la humanidad alma de diamante",216)
+	
+	//presentaciones
+	var circo = new Presentacion(new Date(02, 04, 2018), lunaPark, #{lucas})
+	var presentacionChota = new Presentacion(new Date(24, 04, 2018), lunaPark, #{martin, lucas})
+	
+	test "lucas interpreta bien eres" {
+		assert.that(lucas.interpretaBien(eres))
+	}
+	
+	test "lucas no interpreta bien laFamilia"{
+		assert.notThat(lucas.interpretaBien(laFamilia))
+	}
+	
+	test "lucas cambia a larguero de 300 segundos e interpreta bien cisne"{
+		lucas.categoria(new Larguero(300))
+		assert.that(lucas.interpretaBien(cisne))
+	}
+	
+	test "chano interpreta mal laFamilia"{
+		assert.notThat(chano.interpretaBien(laFamilia))
+	}
+	
+	test "martin no interpreta bien laFamilia" {
+		assert.notThat(martin.interpretaBien(laFamilia))
+	}
+	
+	test "martin interpreta bien eres" {
+		assert.that(martin.interpretaBien(eres))
+	}
+	
+	test "martin cambia a 20 de habilidad y no interpreta bien eres" {
+		martin.habilidad(20)
+		assert.notThat(martin.interpretaBien(eres))
+	}
+	
+	test "lucas cobra 250 en el circo"{
+		assert.equals(lucas.cobra(circo), 250)
+	}
+	
+	test "lucas cambia capacidad estandar a 10000 y cobra 150 en el circo"{
+		lucas.metodoDeCobro(new PorCapacidad(10000, 250))
+		assert.equals(lucas.cobra(circo), 150)
+	}
+	
+	test "martin cobra 250 en la presentacionChota"{
+		assert.equals(martin.cobra(presentacionChota), 250)
+	}
+	
+	test "lucas se baja de la presentacionChota y martin cobra 500"{
+		presentacionChota.quitarArtista(lucas)
+		assert.equals(martin.cobra(presentacionChota), 500)
+	}
+	
+	test "chano cobra 100 en el circo"{
+		assert.equals(chano.cobra(circo), 100)
+	}
+	
+	test "chano cobra 110 en la presentacionChota"{
+		assert.equals(chano.cobra(presentacionChota), 110)
+	}
+	
+}
