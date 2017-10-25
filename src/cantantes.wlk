@@ -3,12 +3,12 @@ import guitarras.*
 import lugares.*
 import musico.*
 import Albumes.*
+import categoriasMusico.*
 
-object luisAlberto inherits Musico( null , null, #{}, null, null){
+object luisAlberto inherits Musico( null , null, #{}, null, new PorInflacion(1000,(new Date(1,9,2017)),20)){
 
 	var guitarra
-	var metodoDeCobro = new PorInflacion(1000,(new Date(1,9,2017)),20)
-
+	
 	method tocarCon(guitar){
 		guitarra = guitar
 		habilidad = 100.max(guitar.valor())
@@ -26,7 +26,7 @@ object luisAlberto inherits Musico( null , null, #{}, null, null){
 		habilidad = 100.min(8 * guitarra.valor())
 		}
 		
-	method cobra(presentacion){
+	override method cobra(presentacion){
 		return metodoDeCobro.cobra(presentacion)
 	}
 	

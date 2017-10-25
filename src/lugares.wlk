@@ -33,3 +33,36 @@ object trastienda{
 		return cantidadPersonas
 	}
 }
+
+
+object laCueva{
+	var cantidadPersonas = 150
+	
+	method cantidadPersonasXFecha(fecha){
+		return cantidadPersonas
+	}
+	
+	method esConcurrido(fecha){ 
+		return self.cantidadPersonasXFecha(fecha) > 5000
+	}
+	
+	method cantidadPersonas(){
+		return cantidadPersonas
+	}
+}
+
+object prixDAmi{
+	var cantidadPersonas = 14000
+	
+	method cantidadPersonasXFecha(fecha){
+		return cantidadPersonas
+	}
+	
+	method esConcurrido(fecha){ 
+		return self.cantidadPersonasXFecha(fecha) > 5000
+	}
+	
+	method cantidadPersonas(){
+		return cantidadPersonas
+	}
+}
