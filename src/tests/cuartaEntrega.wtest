@@ -3,6 +3,10 @@ import musico.*
 import Cancion.*
 import Presentacion.*
 import lugares.*
+import cantantes.* //aca esta luisAlberto
+import Albumes.*
+import Banda.*
+import Representante.*
 
 describe "tests cuarta entrega"{
 	
@@ -11,16 +15,40 @@ describe "tests cuarta entrega"{
 	var martin = new Musico (null, 61, #{}, new Imparero(), new PorCuantosSePresentan(500))
 	var chano = new Musico (null, 61, #{}, new Larguero(300), new PorInflacion(100, new Date(20, 04, 2018), 10))
 	
+	var joaquin = new MusicoDeGrupo('Pimpinela', 20, #{especialLaFamilia},new Larguero(300) ,new PorCuantosSePresentan(100),5)
+	var lucia = new MusicoVocalista('Pimpinela', 70, #{}, new Palabrero('familia'), new PorCapacidad(5000,500))
+	var soledad = new MusicoVocalista(null, 55, #{laSole}, new Palabrero('amor'),new PorCuantosSePresentan(6000))
+	var kike = new MusicoDeGrupo(null, 60, #{} ,new Imparero(),new PorInflacion(4000,(new Date(8,1,2018)),50), 20)
+	
+	//Albumes:    
+    var laSole = new Album("La Sole",new Date(04, 02, 2005), 200000, 130000,#{eres, corazonAmericano})
+    var especialLaFamilia = new Album("Especial La Familia",new Date(17, 06, 1992),100.000,89.000,#{laFamilia})
+    var paraLosArboles = new Album("Para los Arboles", new Date(31, 03, 2003), 50000, 49000, #{cisne, almaDeDiamante})
+    var justCrisantemo = new Album("Just Crisantemo", new Date(05, 12, 2007), 28000, 27500, #{crisantemo})
+ 	
 	//canciones
 	var eres = new Cancion("Eres", "Eres lo mejor que me pasó en la vida, no tengo duda, no habrá más nada después de ti. Eres lo que le dio brillo al día a día, y así será por siempre, no cambiará, hasta el final de mis días.",145)
 	var laFamilia = new Cancion("La Familia", "Quiero brindar por mi gente sencilla, por el amor brindo por la familia", 264)
 	var cisne = new Cancion("Cisne","Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar", 312)
 	var almaDeDiamante = new Cancion("Alma de Diamante", "Ven a mí con tu dulce luz alma de diamante. Y aunque el sol se nuble después sos alma de diamante. Cielo o piel silencio o verdad sos alma de diamante. Por eso ven así con la humanidad alma de diamante",216)
+	var crisantemo =new Cancion("Crisantemo","T�came junto a esta pared, yo quede por aqu�... cuando no hubo m�s luz... quiero mirar a trav�s de mi piel... Crisantemo, que se abri�... encuentra el camino hacia el cielo",175)      
+    var corazonAmericano = new Cancion ("Corazon Americano","Canta coraz�n, canta m�s alto, que tu pena al fin se va marchando, el nuevo milenio ha de encontrarnos, junto coraz�n, como so�amos.",154)    
+ 
+	//lugares (por ahi deberian heredar de una clase Lugar, pero no la tenemos) 
+	var laCueva = 150
+	var prixDAmi = 14000
+
+	//bandas
+	var pimpisole = new Banda("Pimpisole",#{joaquin,lucia,soledad}, new Representante("Cachorro", 1982))
+	var elEternoRetorno = new Banda("El eterno retorno",#{kike,luisAlberto}, new Representante("Felix", 500))
 	
 	//presentaciones
+	var presentacionPrixDAmi = new Presentacion(new Date(30, 06, 2017), laCueva, #{joaquin,soledad,elEternoRetorno})
+	var presentacionLaCueva = new Presentacion(new Date(05, 01, 2018), prixDAmi, #{pimpisole})
+	
 	var circo = new Presentacion(new Date(02, 04, 2018), lunaPark, #{lucas})
 	var presentacionChota = new Presentacion(new Date(24, 04, 2018), lunaPark, #{martin, lucas})
-	
+ 
 	test "lucas interpreta bien eres" {
 		assert.that(lucas.interpretaBien(eres))
 	}

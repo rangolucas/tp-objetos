@@ -7,6 +7,7 @@ import Albumes.*
 object luisAlberto inherits Musico( null , null, #{}, null, null){
 
 	var guitarra
+	var metodoDeCobro = new PorInflacion(1000,(new Date(1,9,2017)),20)
 
 	method tocarCon(guitar){
 		guitarra = guitar
@@ -26,11 +27,7 @@ object luisAlberto inherits Musico( null , null, #{}, null, null){
 		}
 		
 	method cobra(presentacion){
-		if(presentacion.antesDe(1, 9, 2017)){
-			return 1000
-		} else {
-			return 1200
-		}
+		return metodoDeCobro.cobra(presentacion)
 	}
 	
 	method tratarMal(guitar){
