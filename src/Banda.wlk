@@ -4,15 +4,16 @@ import Cancion.*
 
 class Banda {
 		
+		var nombre
 		var representante
 		var musicos = #{}
 		var quimica = true
 		
 		
-		constructor(unRepresentante, unosMusicos, unaQuimica){
-			representante = unRepresentante
+		constructor(unNombre, unosMusicos, unRepresentante){
+			nombre = unNombre
 			musicos = unosMusicos
-			quimica = unaQuimica
+			representante = unRepresentante
 		}
 		
 		method agregarMusico(unMusico){
