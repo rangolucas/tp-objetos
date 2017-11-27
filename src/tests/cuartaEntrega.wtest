@@ -21,7 +21,7 @@ describe "tests cuarta entrega"{
  
 	//Albumes:    
     var laSole = new Album("La Sole",new Date(04, 02, 2005), 200000, 130000,#{eres, corazonAmericano})
-    var especialLaFamilia = new Album("Especial La Familia",new Date(17, 06, 1992),100000,89000,#{laFamilia})
+    var especialLaFamilia = new Album("Especial La Familia",new Date(17, 06, 1992),100000,89000,#{laFamilia,cisne})
     var paraLosArboles = new Album("Para los Arboles", new Date(31, 03, 2003), 50000, 49000, #{cisne, almaDeDiamante})
     var justCrisantemo = new Album("Just Crisantemo", new Date(05, 12, 2007), 28000, 27500, #{crisantemo})
  	
@@ -29,7 +29,7 @@ describe "tests cuarta entrega"{
 	var joaquin = new MusicoDeGrupo('Pimpinela', 20, #{especialLaFamilia},new Larguero(300) ,new PorCuantosSePresentan(100),5)
 	var lucia = new MusicoVocalista('Pimpinela', 70, #{}, new Palabrero('familia'), new PorCapacidad(5000,500))
 	var soledad = new MusicoVocalista(null, 55, #{laSole}, new Palabrero('amor'),new PorCuantosSePresentan(6000))
-	var kike = new MusicoDeGrupo(null, 60, #{} ,new Imparero(),new PorInflacion(4000,(new Date(8,1,2018)),50), 20)
+	var kike = new MusicoDeGrupo(null, 60, #{laSole} ,new Imparero(),new PorInflacion(4000,(new Date(8,1,2018)),50), 20)
 	var lucas = new Musico (null, 50000, #{}, new Palabrero("eres"), new PorCapacidad(1000, 250))
 	var martin = new Musico (null, 61, #{}, new Imparero(), new PorCuantosSePresentan(500))
 	var chano = new Musico (null, 61, #{}, new Larguero(300), new PorInflacion(100, new Date(20, 04, 2018), 10))
@@ -106,53 +106,57 @@ describe "tests cuarta entrega"{
 	}
 
 	test "lucia toca bien laFamilia porque es una cancion que contiene la palabra familia"{
-
+		assert.that(lucia.interpretaBien(laFamilia))
 	}
 
 	test "joaquin toca bien cisne porque dura mas de 300 segundos"{
-
+		assert.that(joaquin.interpretaBien(cisne))
 	}
 
 	test "kike toca bien eres porque la cancion tiene una cantidad impar de segundos"{
-
+		assert.that(kike.interpretaBien(eres))
 	}
 
 	test "lucas cobra 250 en la presentacion circo por cobrar por capacidad"{
-
+		assert.equals(lucas.cobra(circo),250)
 	}
 
 	test "joaquin cobra 50 para la presentacionPrixDAmi porque cobra PorCuantosSePresentan"{
+		assert.equals(joaquin.cobra(presentacionPrixDAmi),50)
 
 	}
 
 	test "luis alberto cobra 1000 por la presentacionPrixDAmi porque cobra PorInflacion y la presentacion se hace antes de septiembre 2017"{
-
+		assert.equals(luisAlberto.cobra(presentacionPrixDAmi),1000)
 	}
 
 	test "lucia ahora es imparera y toca mal laFamilia"{
-
+		lucia.categoria(new Imparero())
+		assert.notThat(lucia.interpretaBien(laFamilia))
 	}
 
 	test "lucas ahora cobra PorCuantosSePresentan y cobra 125 el la presentacion circo"{
-
+		lucas.metodoDeCobro(new PorCuantosSePresentan(125))
+		assert.equals(lucas.cobra(circo),125)
 	}
 
-	test "la habilidad de pimpisole es 159.5"{
-
+	test "la habilidad de pimpisole es 145"{
+		assert.equals(pimpisole.habilidad(), 145)
 	}
 
-	test "la habilidad de pimpisole cuando toca en presentacionLaCueva es 110"{
-
+	test "la habilidad de pimpisole cuando toca en presentacionLaCueva es 159.5"{
+		assert.equals(pimpisole.habilidadXPresentacion(presentacionLaCueva),159.5)
 	}
 
 	test "pimpisoles cobra 8582 por tocar en la presentacionLaCueva"{
-
+		assert.equals(pimpisole.cobra(presentacionLaCueva),8582)
 	}
 
 	test "joaquin de las canciones #{eres,laFamilia,cisne,almaDeDiamante,crisantemo,corazonAmericano} solo toca bien cisne, por durar mas de 300 s"{
-
+		assert.equals(joaquin.cualesCantaBien(#{eres,laFamilia,cisne,almaDeDiamante,crisantemo,corazonAmericano}),#{cisne})
 	}
 
-	test "la magia de presentacionLaCueva es 110"{
-
+	test "la magia de presentacionLaCueva es 145"{
+		assert.equals(presentacionLaCueva.laMagia(),145)
 	}
+}

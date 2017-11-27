@@ -1,5 +1,8 @@
 import cantantes.*
 import lugares.*
+import musico.*
+import Banda.*
+
 
 class Presentacion {
 

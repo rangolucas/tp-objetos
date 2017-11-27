@@ -21,12 +21,13 @@ class Banda {
 		}
 		
 		method habilidad(){
-			if(quimica) return self.sumaHabilidades() + 0.1*self.sumaHabilidades()
+			if(quimica) return (self.sumaHabilidades() + (0.1)*(self.sumaHabilidades()) )
 			else return self.sumaHabilidades()
 		}
 		
-		method habilidadXPresentacion(presentacion){ //REVISAR
-			return self.habilidad()
+		method habilidadXPresentacion(presentacion){
+			if(quimica) return (self.sumaHabilidadesXPresentacion(presentacion)*(1.1) )
+			else return self.sumaHabilidadesXPresentacion(presentacion)
 		}
 		
 		method tocar(unaCancion){
@@ -43,6 +44,10 @@ class Banda {
 		
 		method sumaHabilidades(){	
 			return musicos.sum({musico => musico.habilidad()})
+		}
+		
+		method sumaHabilidadesXPresentacion(presentacion){	
+			return musicos.sum({musico => musico.habilidadXPresentacion(presentacion)})
 		}
 			
 }
