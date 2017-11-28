@@ -15,9 +15,9 @@ describe "tests cuarta entrega"{
 	var palabrero = new Palabrero("mejor")
 	var larguero = new Larguero(300)
 	var imparero = new Imparero()
-	var porCapacidad = new PorCapacidad(1400,300)
-	var porCuantosSePresentan = new PorCuantosSePresentan(500)
-	var porInflacion = new PorInflacion(100,new date(24,12,2017),25)
+	var porCapacidad = new PorCapacidad(1400,300) 
+ 	var porCuantosSePresentan = new PorCuantosSePresentan(500) 
+  	var porInflacion = new PorInflacion(100, new Date(24,12,2017),25) 
 
 	//canciones
 	var eres = new Cancion("Eres", "Eres lo mejor que me pasó en la vida, no tengo duda, no habrá más nada después de ti. Eres lo que le dio brillo al día a día, y así será por siempre, no cambiará, hasta el final de mis días.",145)
@@ -51,8 +51,8 @@ describe "tests cuarta entrega"{
 	var elEternoRetorno = new Banda("El eterno retorno",#{kike,luisAlberto}, new Representante("Felix", 500))
 	
 	//presentaciones
-	var presentacionPrixDAmi = new Presentacion(new Date(30, 06, 2017), laCueva, #{joaquin,soledad,elEternoRetorno})
-	var presentacionLaCueva = new Presentacion(new Date(05, 01, 2018), prixDAmi, #{pimpisole})
+	var presentacionPrixDAmi = new Presentacion(new Date(30, 06, 2017), prixDAmi, #{joaquin,soledad,elEternoRetorno})
+	var presentacionLaCueva = new Presentacion(new Date(05, 01, 2018), laCueva, #{pimpisole})
 	
 	
 	var circo = new Presentacion(new Date(02, 04, 2018), lunaPark, #{lucas})
@@ -79,7 +79,7 @@ describe "tests cuarta entrega"{
 	}
 	
 	test "imparero no interpreta bien la familia"{
-		assert.notThat(imparero.interpretaBien(eres))
+		assert.notThat(imparero.interpretaBien(laFamilia))
 	}
 
 	test "lucas interpreta bien eres" {
@@ -172,24 +172,24 @@ describe "tests cuarta entrega"{
 		assert.equals(lucas.cobra(circo),125)
 	}
 
-	test "la habilidad de pimpisole es 145"{
-		assert.equals(pimpisole.habilidad(), 145)
+	test "la habilidad de pimpisole es 159.5"{
+		assert.equals(pimpisole.habilidad(), 159.5)
 	}
 
 	test "la habilidad de pimpisole cuando toca en presentacionLaCueva es 159.5"{
 		assert.equals(pimpisole.habilidadXPresentacion(presentacionLaCueva),159.5)
 	}
 
-	test "pimpisoles cobra 8582 por tocar en la presentacionLaCueva"{
-		assert.equals(pimpisole.cobra(presentacionLaCueva),8582)
+	test "pimpisoles cobra 8482 por tocar en la presentacionLaCueva"{
+		assert.equals(pimpisole.cobra(presentacionLaCueva),8482)
 	}
 
 	test "joaquin de las canciones #{eres,laFamilia,cisne,almaDeDiamante,crisantemo,corazonAmericano} solo toca bien cisne, por durar mas de 300 s"{
 		assert.equals(joaquin.cualesCantaBien(#{eres,laFamilia,cisne,almaDeDiamante,crisantemo,corazonAmericano}),#{cisne})
 	}
 
-	test "la magia de presentacionLaCueva es 145"{
-		assert.equals(presentacionLaCueva.laMagia(),145)
+	test "la magia de presentacionLaCueva es 121"{
+		assert.equals(presentacionLaCueva.laMagia(), 121)
 	}
 	
 	test "palabrero interpreta bien eres" {
