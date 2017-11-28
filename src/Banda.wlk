@@ -26,7 +26,7 @@ class Banda {
 		}
 		
 		method habilidadXPresentacion(presentacion){
-			if(quimica) return (self.sumaHabilidadesXPresentacion(presentacion)*(1.1) )
+			if(quimica) return self.sumaHabilidadesXPresentacion(presentacion)*(1.1)
 			else return self.sumaHabilidadesXPresentacion(presentacion)
 		}
 		

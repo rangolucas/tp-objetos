@@ -187,34 +187,6 @@ describe "tests cuarta entrega"{
 	test "joaquin de las canciones #{eres,laFamilia,cisne,almaDeDiamante,crisantemo,corazonAmericano} solo toca bien cisne, por durar mas de 300 s"{
 		assert.equals(joaquin.cualesCantaBien(#{eres,laFamilia,cisne,almaDeDiamante,crisantemo,corazonAmericano}),#{cisne})
 	}
-
-	test "la magia de presentacionLaCueva es 121"{
-		assert.equals(presentacionLaCueva.laMagia(), 121)
-	}
-	
-	test "palabrero interpreta bien eres" {
-		assert.that(palabrero.interpretaBien(eres))
-	}
-	
-	test "palabrero no interpreta bien laFamilia"{
-		assert.notThat(palabrero.interpretaBien(laFamilia))
-	}
-	
-	test "larguero interpreta bien cisne"{
-		assert.that(larguero.interpretaBien(cisne))
-	}
-	
-	test "larguero no interpreta bien almaDeDiamante"{
-		assert.notThat(larguero.interpretaBien(almaDeDiamante))
-	}
-	
-	test "imparero interpreta bien eres"{
-		assert.that(imparero.interpretaBien(eres))	
-	}
-	
-	test "imparero no interpreta bien la familia"{
-		assert.notThat(imparero.interpretaBien(eres))
-	}
 	
 	test "porCapacidad obtiene 300 como ingreso en prixDAmi"{
 		assert.equals(porCapacidad.cobra(presentacionPrixDAmi),300)
