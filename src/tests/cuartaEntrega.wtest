@@ -11,6 +11,11 @@ import Representante.*
 describe "tests cuarta entrega"{
 	
 
+	//categorias
+	var palabrero = new Palabrero("mejor")
+	var larguero = new Larguero(300)
+	var imparero = new Imparero()
+
 	//canciones
 	var eres = new Cancion("Eres", "Eres lo mejor que me pasó en la vida, no tengo duda, no habrá más nada después de ti. Eres lo que le dio brillo al día a día, y así será por siempre, no cambiará, hasta el final de mis días.",145)
 	var laFamilia = new Cancion("La Familia", "Quiero brindar por mi gente sencilla, por el amor brindo por la familia", 264)
@@ -158,5 +163,29 @@ describe "tests cuarta entrega"{
 
 	test "la magia de presentacionLaCueva es 145"{
 		assert.equals(presentacionLaCueva.laMagia(),145)
+	}
+	
+	test "palabrero interpreta bien eres" {
+		assert.that(palabrero.interpretaBien(eres))
+	}
+	
+	test "palabrero no interpreta bien laFamilia"{
+		assert.notThat(palabrero.interpretaBien(laFamilia))
+	}
+	
+	test "larguero interpreta bien cisne"{
+		assert.that(larguero.interpretaBien(cisne))
+	}
+	
+	test "larguero no interpreta bien almaDeDiamante"{
+		assert.notThat(larguero.interpretaBien(almaDeDiamante))
+	}
+	
+	test "imparero interpreta bien eres"{
+		assert.that(imparero.interpretaBien(eres))	
+	}
+	
+	test "imparero no interpreta bien la familia"{
+		assert.notThat(imparero.interpretaBien(eres))
 	}
 }
