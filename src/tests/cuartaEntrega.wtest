@@ -15,6 +15,9 @@ describe "tests cuarta entrega"{
 	var palabrero = new Palabrero("mejor")
 	var larguero = new Larguero(300)
 	var imparero = new Imparero()
+	var porCapacidad = new PorCapacidad(1400,300) 
+ 	var porCuantosSePresentan = new PorCuantosSePresentan(500) 
+  	var porInflacion = new PorInflacion(100, new Date(24,12,2017),25) 
 
 	//canciones
 	var eres = new Cancion("Eres", "Eres lo mejor que me pasó en la vida, no tengo duda, no habrá más nada después de ti. Eres lo que le dio brillo al día a día, y así será por siempre, no cambiará, hasta el final de mis días.",145)
@@ -188,4 +191,28 @@ describe "tests cuarta entrega"{
 	test "la magia de presentacionLaCueva es 121"{
 		assert.equals(presentacionLaCueva.laMagia(), 121)
 	}
+	
+  	test "porCapacidad obtiene 300 como ingreso en prixDAmi"{ 
+    	assert.equals(porCapacidad.cobra(presentacionPrixDAmi),300) 
+    } 
+     
+  	test "porCapacidad obtiene 200 como ingreso en la Cueva"{ 
+    	assert.equals(porCapacidad.cobra(presentacionLaCueva),200) 
+    }   
+ 
+  	test "porCuantosSePresentan obtiene 250 como ingreso en prixDAmi"{ 
+    	assert.equals(porCuantosSePresentan.cobra( presentacionPrixDAmi),250) 
+    }   
+     
+  	test "porCuantosSePresentan obtiene 500 como ingreso en la Cueva"{ 
+    	assert.equals(porCuantosSePresentan.cobra(presentacionLaCueva),500) 
+    } 
+     
+  	test "porInflacion obtiene 100 como ingreso en prixDAmi"{ 
+    	assert.equals(porInflacion.cobra(presentacionPrixDAmi),100) 
+    } 
+     
+ 	test "porInflacion obtiene 125 como ingreso en La Cueva"{ 
+    	assert.equals(porInflacion.cobra(presentacionLaCueva),125) 
+    }   
 }
