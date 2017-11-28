@@ -38,10 +38,10 @@ describe "tests cuarta entrega"{
 	var lucas = new Musico (null, 50000, #{}, new Palabrero("eres"), new PorCapacidad(1000, 250))
 	var martin = new Musico (null, 61, #{}, new Imparero(), new PorCuantosSePresentan(500))
 	var chano = new Musico (null, 61, #{}, new Larguero(300), new PorInflacion(100, new Date(20, 04, 2018), 10))
-	
-	//lugares (por ahi deberian heredar de una clase Lugar, pero no la tenemos) 
-	//var laCueva = 150
-	//var prixDAmi = 14000
+
+	//lugares 
+	var laCueva = new Lugar(150)
+	var prixDAmi = new Lugar(14000)
 
 	//bandas
 	var pimpisole = new Banda("Pimpisole",#{joaquin,lucia,soledad}, new Representante("Cachorro", 1982))
@@ -54,6 +54,30 @@ describe "tests cuarta entrega"{
 	
 	var circo = new Presentacion(new Date(02, 04, 2018), lunaPark, #{lucas})
 	var presentacionChota = new Presentacion(new Date(24, 04, 2018), lunaPark, #{martin, lucas})
+	
+	test "palabrero interpreta bien eres" {
+		assert.that(palabrero.interpretaBien(eres))
+	}
+	
+	test "palabrero no interpreta bien laFamilia"{
+		assert.notThat(palabrero.interpretaBien(laFamilia))
+	}
+	
+	test "larguero interpreta bien cisne"{
+		assert.that(larguero.interpretaBien(cisne))
+	}
+	
+	test "larguero no interpreta bien almaDeDiamante"{
+		assert.notThat(larguero.interpretaBien(almaDeDiamante))
+	}
+	
+	test "imparero interpreta bien eres"{
+		assert.that(imparero.interpretaBien(eres))	
+	}
+	
+	test "imparero no interpreta bien la familia"{
+		assert.notThat(imparero.interpretaBien(eres))
+	}
 
 	test "lucas interpreta bien eres" {
 		assert.that(lucas.interpretaBien(eres))
@@ -163,29 +187,5 @@ describe "tests cuarta entrega"{
 
 	test "la magia de presentacionLaCueva es 145"{
 		assert.equals(presentacionLaCueva.laMagia(),145)
-	}
-	
-	test "palabrero interpreta bien eres" {
-		assert.that(palabrero.interpretaBien(eres))
-	}
-	
-	test "palabrero no interpreta bien laFamilia"{
-		assert.notThat(palabrero.interpretaBien(laFamilia))
-	}
-	
-	test "larguero interpreta bien cisne"{
-		assert.that(larguero.interpretaBien(cisne))
-	}
-	
-	test "larguero no interpreta bien almaDeDiamante"{
-		assert.notThat(larguero.interpretaBien(almaDeDiamante))
-	}
-	
-	test "imparero interpreta bien eres"{
-		assert.that(imparero.interpretaBien(eres))	
-	}
-	
-	test "imparero no interpreta bien la familia"{
-		assert.notThat(imparero.interpretaBien(eres))
 	}
 }
